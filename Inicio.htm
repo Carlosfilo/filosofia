@@ -1,0 +1,645 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimHei;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Bodoni MT";
+	panose-1:2 7 6 3 8 6 6 2 2 3;}
+@font-face
+	{font-family:Garamond;
+	panose-1:2 2 4 4 3 3 1 1 8 3;}
+@font-face
+	{font-family:Candara;
+	panose-1:2 14 5 2 3 3 3 2 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimHei";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:5.05pt;
+	font-size:12.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+h1
+	{mso-style-link:"Título 1 Car";
+	margin-top:12.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Garamond",serif;
+	color:#69230B;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Título 2 Car";
+	margin-top:2.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Garamond",serif;
+	color:#69230B;
+	font-weight:normal;}
+h4
+	{mso-style-link:"Título 4 Car";
+	margin-top:2.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Garamond",serif;
+	color:#69230B;
+	font-weight:normal;
+	font-style:italic;}
+h5
+	{mso-style-link:"Título 5 Car";
+	margin-top:2.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Garamond",serif;
+	color:#69230B;
+	font-weight:normal;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-link:"Título 8 Car";
+	margin-top:2.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#272727;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-link:"Título 9 Car";
+	margin-top:2.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#272727;
+	font-style:italic;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-link:"Texto nota pie Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Texto comentario Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:5.05pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Encabezado Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Pie de página Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:10.0pt;
+	margin-left:5.05pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;
+	font-style:italic;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{mso-style-link:"Texto nota al final Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{mso-style-link:"Texto macro Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Consolas;
+	color:#696464;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Título Car";
+	margin-top:0cm;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:120%;
+	font-size:34.0pt;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-link:"Subtítulo Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:20.0pt;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{mso-style-link:"Fecha Car";
+	margin-top:0cm;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{mso-style-link:"Texto independiente 3 Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:6.0pt;
+	margin-left:5.05pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{mso-style-link:"Sangría 3 de t\. independiente Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:6.0pt;
+	margin-left:18.0pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:6.0pt;
+	margin-right:57.6pt;
+	margin-bottom:12.0pt;
+	margin-left:57.6pt;
+	border:none;
+	padding:0cm;
+	font-size:12.0pt;
+	font-family:"Garamond",serif;
+	color:#69230B;
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{color:#69230B;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#4A3128;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-link:"Mapa del documento Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#696464;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Texto sin formato Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Consolas;
+	color:#696464;}
+code
+	{font-family:Consolas;}
+kbd
+	{font-family:Consolas;}
+pre
+	{mso-style-link:"HTML con formato previo Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Consolas;
+	color:#696464;}
+tt
+	{font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Asunto del comentario Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:5.05pt;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#696464;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Texto de globo Car";
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#696464;}
+span.MsoPlaceholderText
+	{color:#595959;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:5.05pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Bodoni MT",serif;
+	color:#696464;}
+p.MsoIntenseQuote, li.MsoIntenseQuote, div.MsoIntenseQuote
+	{mso-style-link:"Cita destacada Car";
+	margin-top:18.0pt;
+	margin-right:43.2pt;
+	margin-bottom:18.0pt;
+	margin-left:43.2pt;
+	text-align:center;
+	border:none;
+	padding:0cm;
+	font-size:12.0pt;
+	font-family:"Garamond",serif;
+	color:#69230B;
+	font-style:italic;}
+span.MsoIntenseEmphasis
+	{color:#69230B;
+	font-style:italic;}
+span.MsoIntenseReference
+	{font-variant:small-caps;
+	color:#69230B;
+	text-transform:none;
+	letter-spacing:.25pt;
+	font-weight:bold;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Garamond",serif;
+	color:#69230B;}
+span.SubttuloCar
+	{mso-style-name:"Subtítulo Car";
+	mso-style-link:Subtítulo;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;
+	font-weight:bold;}
+span.TtuloCar
+	{mso-style-name:"Título Car";
+	mso-style-link:Título;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;
+	font-weight:bold;}
+span.FechaCar
+	{mso-style-name:"Fecha Car";
+	mso-style-link:Fecha;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;}
+p.Hora, li.Hora, div.Hora
+	{mso-style-name:Hora;
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;}
+p.Ubicacin, li.Ubicacin, div.Ubicacin
+	{mso-style-name:Ubicación;
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:18.0pt;
+	font-family:"Garamond",serif;
+	color:white;}
+p.Informacindecontacto, li.Informacindecontacto, div.Informacindecontacto
+	{mso-style-name:"Información de contacto";
+	margin-top:0cm;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:79.9pt;
+	text-align:right;
+	font-size:11.0pt;
+	font-family:"Garamond",serif;
+	color:#D34817;
+	font-weight:bold;}
+span.EncabezadoCar
+	{mso-style-name:"Encabezado Car";
+	mso-style-link:Encabezado;
+	font-family:"Bodoni MT",serif;}
+span.PiedepginaCar
+	{mso-style-name:"Pie de página Car";
+	mso-style-link:"Pie de página";
+	font-family:"Bodoni MT",serif;}
+span.Ttulo1Car
+	{mso-style-name:"Título 1 Car";
+	mso-style-link:"Título 1";
+	font-family:"Garamond",serif;
+	color:#69230B;}
+span.Ttulo2Car
+	{mso-style-name:"Título 2 Car";
+	mso-style-link:"Título 2";
+	font-family:"Garamond",serif;
+	color:#69230B;}
+span.Ttulo4Car
+	{mso-style-name:"Título 4 Car";
+	mso-style-link:"Título 4";
+	font-family:"Garamond",serif;
+	color:#69230B;
+	font-style:italic;}
+span.Ttulo5Car
+	{mso-style-name:"Título 5 Car";
+	mso-style-link:"Título 5";
+	font-family:"Garamond",serif;
+	color:#69230B;}
+span.CitadestacadaCar
+	{mso-style-name:"Cita destacada Car";
+	mso-style-link:"Cita destacada";
+	color:#69230B;
+	font-style:italic;}
+span.Ttulo8Car
+	{mso-style-name:"Título 8 Car";
+	mso-style-link:"Título 8";
+	font-family:"Garamond",serif;
+	color:#272727;}
+span.Ttulo9Car
+	{mso-style-name:"Título 9 Car";
+	mso-style-link:"Título 9";
+	font-family:"Garamond",serif;
+	color:#272727;
+	font-style:italic;}
+span.TextodegloboCar
+	{mso-style-name:"Texto de globo Car";
+	mso-style-link:"Texto de globo";
+	font-family:"Segoe UI",sans-serif;}
+span.Textoindependiente3Car
+	{mso-style-name:"Texto independiente 3 Car";
+	mso-style-link:"Texto independiente 3";}
+span.Sangra3detindependienteCar
+	{mso-style-name:"Sangría 3 de t\. independiente Car";
+	mso-style-link:"Sangría 3 de t\. independiente";}
+span.TextocomentarioCar
+	{mso-style-name:"Texto comentario Car";
+	mso-style-link:"Texto comentario";}
+span.AsuntodelcomentarioCar
+	{mso-style-name:"Asunto del comentario Car";
+	mso-style-link:"Asunto del comentario";
+	font-weight:bold;}
+span.MapadeldocumentoCar
+	{mso-style-name:"Mapa del documento Car";
+	mso-style-link:"Mapa del documento";
+	font-family:"Segoe UI",sans-serif;}
+span.TextonotaalfinalCar
+	{mso-style-name:"Texto nota al final Car";
+	mso-style-link:"Texto nota al final";}
+span.TextonotapieCar
+	{mso-style-name:"Texto nota pie Car";
+	mso-style-link:"Texto nota pie";}
+span.HTMLconformatoprevioCar
+	{mso-style-name:"HTML con formato previo Car";
+	mso-style-link:"HTML con formato previo";
+	font-family:Consolas;}
+span.TextomacroCar
+	{mso-style-name:"Texto macro Car";
+	mso-style-link:"Texto macro";
+	font-family:Consolas;}
+span.TextosinformatoCar
+	{mso-style-name:"Texto sin formato Car";
+	mso-style-link:"Texto sin formato";
+	font-family:Consolas;}
+p.Introduccin, li.Introduccin, div.Introduccin
+	{mso-style-name:Introducción;
+	margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:14.0pt;
+	font-family:"Garamond",serif;
+	color:white;
+	text-transform:uppercase;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Bodoni MT",serif;
+	color:#696464;}
+.MsoPapDefault
+	{margin-top:6.0pt;
+	margin-right:5.05pt;
+	margin-bottom:12.0pt;
+	margin-left:5.05pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:14.4pt 14.4pt 14.4pt 14.4pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body bgcolor="#343131" lang=ES link="#69230B" vlink="#4A3128">
+
+<div class=WordSection1>
+
+<p class=MsoTitle style='background:#732117'>filosofia para no</p>
+
+<p class=MsoTitle style='background:#732117'>filosofos</p>
+
+<p class=MsoSubtitle style='background:#732117'>Un camino de busqueda</p>
+
+<p class=MsoSubtitle style='background:#732117'>la filosofiA                   
+la preguntA</p>
+
+<p class=MsoNormal style='margin-left:0cm'><span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext'><img width=1279 height=218
+id="Imagen 8" src="Inicio_archivos/image001.png"
+alt="Título: Carretera - Descripción: Una imagen de una carretera de curvas con árboles"></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ summary="Diseño de tabla" width=1207 style='width:603.3pt;margin-left:27.5pt;
+ border-collapse:collapse'>
+ <tr style='height:216.6pt'>
+  <td width=231 valign=top style='width:115.3pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:216.6pt'>
+  <p class=MsoNormal style='margin-left:0cm'><b><span style='font-size:16.0pt;
+  color:#F2F2F2;letter-spacing:.5pt;background:black'>SITIOS DE INTERES Y
+  VIDEOS.</span></b></p>
+  <p class=MsoNormal style='margin-left:0cm'><b><span style='font-size:16.0pt;
+  color:#00B0F0'><img width=179 height=100 id="Imagen 10"
+  src="Inicio_archivos/image002.jpg"
+  alt="Servicios de internet: 30 características para contratar el mejor"></span></b><span
+  style='color:#00B0F0;background:black'> </span><span style='color:#00B0F0'><img
+  width=182 height=99 id="Imagen 12" src="Inicio_archivos/image003.jpg"
+  alt="La experiencia de innovación de la ciudad se presentó en el &quot;Internet Day&quot;,  el principal encuentro del ecosistema de internet de la región &gt;  Municipalidad de Córdoba"></span></p>
+  <p class=MsoNormal style='margin-left:0cm'><a href="sitios.htm"><b><i><span
+  style='font-size:18.0pt;color:red;letter-spacing:.5pt;background:lightgrey'>INGRESAR</span></i></b></a></p>
+  <p class=MsoNormal style='margin-left:0cm'><a href="http://WWW.GOOGLE.COM"
+  title=SALIR><b><span style='font-size:16.0pt;background:black'>SALIR</span></b></a></p>
+  </td>
+  <td width=285 valign=top style='width:142.35pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:216.6pt'>
+  <p class=MsoNormal style='margin-left:0cm'><b><u><span style='font-size:18.0pt;
+  color:yellow'>FILOSOFOS</span></u></b></p>
+  <p class=MsoNormal style='margin-left:0cm'><span style='font-size:18.0pt;
+  color:yellow'>BIOGRAFIA </span></p>
+  <p class=MsoNormal style='margin-left:0cm'><span style='font-size:18.0pt;
+  color:yellow'>PRINCIPALES OBRAS</span></p>
+  <p class=MsoNormal style='margin-left:0cm'><b><span style='color:yellow'><img
+  border=0 width=253 height=210 id="Imagen 2" src="Inicio_archivos/image004.jpg"
+  alt="Resultado de imagen de filosofos "></span></b></p>
+  <p class=MsoNormal style='margin-left:0cm'><b><i><u><span style='font-size:
+  18.0pt;color:yellow'><span style='text-decoration:none'>&nbsp;</span></span></u></i></b></p>
+  <p class=MsoNormal style='margin-left:0cm'><a href="FILOSOFOS.htm"><b><i><span
+  style='font-size:18.0pt;color:yellow'>INGRESAR</span></i></b></a></p>
+  <p class=MsoNormal style='margin-left:0cm'><span style='font-size:18.0pt;
+  color:yellow'>&nbsp;</span></p>
+  </td>
+  <td width=691 style='width:345.65pt;padding:0cm 5.4pt 0cm 5.4pt;height:216.6pt'>
+  <p class=Informacindecontacto align=left style='margin-top:0cm;margin-right:
+  5.05pt;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+  left;background:#732117'><span style='font-size:14.0pt;color:yellow'>ESTA ES
+  UNA PAGINA DESARROLLADA PARA AQUELLOS INTERESADOS, EN LA LECTURA DE TEMAS
+  FILOSOFICOS. TIENE COMO PROPOSITO; PONER A DISPOSICION DE LOS VISITANTES, EN
+  FORMA SENCILLA, MATERIALES, QUE SE ENCUENTRAN DISPONIBLES EN INTERNET Y QUE
+  AQUI SE PUEDEN ENCONTRAR EN FORMA ORDENADA Y DE FACIL ACCESO.</span></p>
+  <p class=Informacindecontacto align=left style='margin-top:0cm;margin-right:
+  5.05pt;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+  left;background:#732117'><span style='font-size:14.0pt;color:yellow'>LA
+  INTENCION DEL AUTOR ES LA DIFUSION DE LA FILOSOFIA.</span></p>
+  <p class=Informacindecontacto align=left style='margin-top:0cm;margin-right:
+  5.05pt;margin-bottom:6.0pt;margin-left:0cm;text-align:left'><span
+  style='color:yellow'><img border=0 width=291 height=5 id="Conector recto 3"
+  src="Inicio_archivos/image005.png"></span></p>
+  <p class=Informacindecontacto align=left style='margin-top:0cm;margin-right:
+  5.05pt;margin-bottom:18.0pt;margin-left:0cm;text-align:left'><span
+  style='font-size:14.0pt;color:yellow'>MATERIAL DE LECTURA</span></p>
+  <p class=Informacindecontacto align=left style='margin-top:0cm;margin-right:
+  5.05pt;margin-bottom:18.0pt;margin-left:0cm;text-align:left'><span
+  style='font-size:12.0pt;color:yellow'>AQUI ENCONTRARA LIBROS Y ARTICULOS
+  FILOSOFICOS</span><span style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+  color:yellow;font-weight:normal'><img border=0 width=591 height=155
+  id="Imagen 9" src="Inicio_archivos/image006.jpg"
+  alt="Resultado de imagen de personas leyendo libros"></span></p>
+  <p class=Informacindecontacto align=left style='margin-top:0cm;margin-right:
+  5.05pt;margin-bottom:18.0pt;margin-left:0cm;text-align:left'><i><u><span
+  style='font-size:18.0pt;color:yellow'>I</span></u></i><a href="biblio.htm"><i><span
+  style='font-size:18.0pt;color:yellow'>NGRESAR</span></i></a></p>
+  <p class=Informacindecontacto align=left style='margin-top:0cm;margin-right:
+  5.05pt;margin-bottom:18.0pt;margin-left:0cm;text-align:left'><span
+  style='color:yellow'><img border=0 width=291 height=5 id="Conector recto 6"
+  src="Inicio_archivos/image005.png"></span></p>
+  <p class=MsoNormal style='margin-left:0cm'><span style='color:yellow'>Carlos
+  Rafael Pendini  Contacto: 
+  cpendini@hotmail.com                                                                    
+  </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:5.05pt;margin-bottom:
+0cm;margin-left:0cm;margin-bottom:.0001pt'><span style='font-size:6.0pt'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
