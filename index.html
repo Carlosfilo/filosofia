@@ -5,51 +5,487 @@
 <meta name="keywords" content="lecturas filosóficas, filosofía, Carlos Pendini, filósofos"/>
 <meta name="description" content="Esta es una página desarrollada para aquellos interesados, en la lectura de temas filosóficos.Tiene como proposito poner a disposición de los visitantes, materiales que se encuentran disponibles en internet y que aquí se pueden visualizar en forma ordenada y de fácil acceso"/>
 	<title>filosofia</title>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --paper:#f5f1e8;
+    --ink:#18252b;
+    --muted:#53616a;
+    --accent:#a9792d;
+    --line:#d8d1c4;
+    --dark:#14242b;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height:1.6;
+  }
+  .top {
+    position:sticky; top:0; z-index:10;
+    background:rgba(250,248,242,.96);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(8px);
+  }
+  nav {
+    max-width:1200px; margin:auto; min-height:76px;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 28px;
+  }
+  .brand { letter-spacing:.18em; font-size:25px; font-weight:600; }
+  .brand small {
+    display:block; font:11px/1.1 Arial,sans-serif;
+    letter-spacing:.35em; margin-top:3px;
+  }
+  .links { display:flex; gap:25px; align-items:center; }
+  .links a {
+    color:var(--ink); text-decoration:none;
+    font:14px Arial,sans-serif;
+}
+  .links a:hover { color:var(--accent); }
+  /* Menús desplegables de escritorio */
+  .dropdown {
+    position:relative;
+    display:inline-flex;
+    align-items:LEFT;
+  }
+
+  .dropbtn {
+    border:0;
+    background:transparent;
+    color:var(--ink);
+    font:14px Arial,sans-serif;
+    padding:10px 0;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+
+  .dropbtn span {
+    display:inline-block;
+    margin-left:4px;
+    transition:transform .25s ease;
+  }
+
+  .dropdown-menu {
+    position:absolute;
+    top:calc(100% + 10px);
+    left:50%;
+    transform:translateX(-50%) translateY(-8px);
+    min-width:245px;
+    padding:10px 0;
+    background:rgba(250,248,242,.98);
+    border:1px solid var(--line);
+    box-shadow:0 14px 30px rgba(20,36,43,.14);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease, visibility .22s ease;
+    z-index:50;
+  }
+
+  .dropdown-menu::before {
+    content:"";
+    position:absolute;
+    top:-6px;
+    left:50%;
+    width:11px;
+    height:11px;
+    background:rgba(250,248,242,.98);
+    border-left:1px solid var(--line);
+    border-top:1px solid var(--line);
+    transform:translateX(-50%) rotate(45deg);
+  }
+
+  .dropdown-menu a {
+    display:block;
+    padding:9px 18px;
+    color:var(--ink);
+    text-decoration:none;
+    font:13px/1.35 Arial,sans-serif;
+    text-align:left;
+  }
+
+  .dropdown-menu a:hover {
+    color:var(--accent);
+    background:#eee9de;
+  }
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  .dropdown:hover .dropbtn span,
+  .dropdown:focus-within .dropbtn span {
+    transform:rotate(180deg);
+  }
+
+  .mobile-menu-toggle,
+  .mobile-menu {
+    display:none;
+  }
+
+  @media(max-width:900px) {
+    .links { display:none; }
+
+    .mobile-menu-toggle {
+      display:block;
+      border:0;
+      background:transparent;
+      color:var(--ink);
+      font-size:24px;
+      cursor:pointer;
+      padding:8px;
+    }
+
+    body.menu-open .mobile-menu {
+      display:block;
+      position:absolute;
+      top:76px;
+      left:0;
+      right:0;
+      max-height:calc(100vh - 76px);
+      overflow:auto;
+      background:rgba(250,248,242,.99);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 14px 30px rgba(20,36,43,.12);
+      padding:12px 22px 22px;
+      z-index:100;
+    }
+
+    .mobile-menu > a,
+    .mobile-menu summary {
+      display:block;
+      padding:13px 4px;
+      color:var(--ink);
+      text-decoration:none;
+      font:14px Arial,sans-serif;
+	  font-weight: bold;
+      border-bottom:1px solid var(--line);
+      cursor:pointer;
+    }
+
+    .mobile-menu details a {
+      display:block;
+      padding:9px 15px;
+      color:var(--muted);
+      text-decoration:none;
+      font:13px Arial,sans-serif;
+    }
+
+    .mobile-menu summary {
+      list-style:none;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .mobile-menu summary::after {
+      content:"＋";
+      float:right;
+      color:var(--accent);
+    }
+
+    .mobile-menu details[open] summary::after {
+      content:"−";
+    }
+  }
+
+  .hero {
+    max-width:1100px; margin:auto;
+    min-height:590px;
+    display:flex; align-items:flex-end;
+    background:#333;
+    background-image:url("imagenes/portadanuevamate.png");
+    
+	background-size:cover;
+    background-position:center;
+    position:relative;
+  }
+  .hero::after {
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(90deg,rgba(8,16,20,.28),transparent 65%);
+  }
+  .hero-note {
+    position:relative; z-index:1;
+    margin:0 0 42px 55px;
+    max-width:570px; color:white;
+  }
+  .hero-note h1 {
+    font-size:clamp(45px,6vw,78px);
+    line-height:.95; margin:0 0 12px;
+    letter-spacing:.02em;
+  }
+  .hero-note .sub { font-size:30px; font-style:italic; }
+  .hero-note p {
+    font:17px/1.65 Arial,sans-serif;
+    max-width:530px;
+  }
+  .signature { font-style:italic; font-size:25px; margin-top:20px; }
+  .doors {
+    max-width:1200px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(6,1fr);
+    background:#faf8f2;
+    border-bottom:1px solid var(--line);
+  }
+  .door {
+    text-align:center; padding:34px 14px 30px;
+    border-right:1px solid var(--line);
+    text-decoration:none; color:var(--ink);
+  }
+  .door:last-child { border-right:0; }
+  .icon {
+    width:52px;height:52px;border:1px solid #74808a;border-radius:50%;
+    margin:0 auto 14px; display:grid;place-items:center;
+    font:23px Georgia,serif;
+  }
+  .door h3 { margin:0 0 8px; font:600 14px Arial,sans-serif; letter-spacing:.18em; }
+  .door p { margin:0; font:14px/1.45 Arial,sans-serif; color:var(--muted); }
+  section { max-width:1100px; margin:auto; padding:85px 28px; }
+  .about { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+  .eyebrow { font:12px Arial,sans-serif; letter-spacing:.22em; color:var(--accent); }
+  h2 { font-size:42px; line-height:1.1; margin:10px 0 22px; }
+  .about p { font-size:18px; color:#39464c; }
+  .about-card {
+    background:#e8e0d0; padding:36px;
+    border-left:4px solid var(--accent);
+  }
+  .quote { font-size:27px; font-style:italic; line-height:1.35; margin:0; }
+  .start { background:#17272e; color:#f6f1e7; max-width:none; }
+  .start-inner { max-width:1100px; margin:auto; padding:75px 28px; }
+  .start-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .start-item {
+    padding:28px; border:1px solid rgba(255,255,255,.18);
+  }
+  .start-item h3 { margin:0 0 10px; font-size:24px; }
+  .start-item p { color:#d6d9d7; margin:0; font-family:Arial,sans-serif; }
+  footer {
+    background:#101d22; color:#dce0dd; padding:35px 28px;
+    display:flex; justify-content:space-between; gap:20px;
+    font-family:Arial,sans-serif; font-size:13px;
+  }
+  @media(max-width:900px) {
+    .links { display:none; }
+    .doors { grid-template-columns:repeat(3,1fr); }
+    .door:nth-child(3) { border-right:0; }
+    .about,.start-grid { grid-template-columns:1fr; }
+  }
+  @media(max-width:600px) {
+    nav { padding:12px 18px; }
+    .brand { font-size:20px; }
+    .hero { min-height:570px; background-position:62% center; }
+    .hero-note { margin:0 24px 30px; }
+    .hero-note h1 { font-size:50px; }
+    .hero-note .sub { font-size:24px; }
+    .doors { grid-template-columns:repeat(2,1fr); }
+    .door:nth-child(2n) { border-right:0; }
+    section { padding:60px 22px; }
+    h2 { font-size:34px; }
+    footer { flex-direction:column; }
+  
+
+  </style>
 </head>
 <body>
-<style>
-body {background-color:#bcaaa4 ;}
-h1 {background-color: #5d4037;}
-h3 {background-color: #5d4037;}
+<header class="top">
 
-</style>
-<br>
+  <nav>
+    <button class="mobile-menu-toggle" aria-label="Abrir menú"
+      onclick="document.body.classList.toggle('menu-open')">☰</button>
+    <div class="links">
+     <div class="dropdown">
+        <button class="dropbtn"><h4>FILOSOFOS</h4><span>⌄</span></button>
+        <div class="dropdown-menu">
+         <a href="Agamben.html">Agamben Giorgio(1942)</a>
+						   <a href="ALEMAN.html">Alemán Jorge(1951)</a>
+						   <a href="ARENDT.html">Arendt Hannah(1906 -1975)</a>
+						   <a href="ARISTOTELES.html">Aristóteles (384 a.C.- 322 a.C)</a>
+						   <a href="bauman.html">Bauman Zigmun(1925 - 2017)</a>
+						   <a href="berardi.html">Berardi Franco( 1948)</a>
+						   <a href="HANS.html">Blumenberg Hans (1920-1996)</a>
+						   <a href="bobbio.html">Bobbio Norberto(1909 - 2004)</a>
+						   <a href="borges.html">Borges José l(1899 - 1986)</a>
+						   <a href="butler.html">Butler Judith(1956)</a>
+						   <a href="delluze.html">Deleuze Gilles (1925 - 1995)</a>
+						   <a href="Diaz.html">Diaz Esther (1938)</a>
+						   <a href="DERRIDA.html">Derrida Jack(1930 - 2004)</a>
+						   <a href="Dussel.html">Dussel Enrique(1934 - 2023)</a>
+						   <a href="foulcaut.html">Foulcaut Michell(1926 - 1984)</a>
+						   <a href="guattari.html">Guattari Felix (1930)</a>
+						   <a href="Hume.html">Hume David(1711 - 1776)</a>
+						   <a href="kant.html">Kant Immanuel(1724 - 1804)</a>
+						   <a href="LAZZARATO.html">Lazzaratto Mauricio(1955)</a>
+						   <a href="levinas.html">Levinas Emmanuel(1906 - 1995)</a>
+						   <a href="nancy.html">Nancy Jean Luc(1940 - 2021)</a>
+						   <a href="NEGRI.html">Negri Antonio(1933 - 2023)</a>
+						   <a href="nietzsche.html">Nietzsche Friedrich(1844 - 1900)</a>
+						   <a href="MAESTROS.html">Maestros de la Sospecha</li></a>
+						   <a href="">Popper Karl (1902 - 1994)</a>
+						   <a href="quijano.html">Quijano Anibal (1928 - 2018)</a>
+						   <a href="ricouer.html">Ricouer Paul(1913 - 2005)</a>
+						   <a href="rousseau.html">Rousseau Jean Jacques(1712 - 1778)</a>
+						   <a href="RUSSELL.HTML">Russell Bertrand (1872 - 1970)</a>
+						   <a href="RUSSELL.HTML">Russell Bertrand (1872 - 1970)</a>
+						   <a href="sadin.html">Eric Sadin (1973)</a>
+						   <a href="shopenha.html">Shopenhauer Arthur (1788-1860)</a>
+						   <a href="SPINOZA.html">Spinoza Baruch(1632 - 1677)</a></
+						   <a href="tatian.html">Tatian Diego</a>
+						   <a href="vattimo.html">Vattimo Gianni(1936 - 2023)</a>
+						   <a href="WITTGENSTEIN.html">Wittgenstein Ludwig (1889 - 1951)</a>
+        </div>
+      </div>
 
-<center>
-        <TEXT><h1><em><strong><p style="color: white">"LECTURAS FILOSOFICAS PARA NO FILOSOFOS"</h1></strong></em>
-	    <left>
-<video width="400"height="270" controls autoplay>
-<source src="imagenes/bienvenida.mp4" type="video/mp4"></video>
-</left><img src="imagenes/camino.jpg"width=500"height"1000>
-		<TEXT><h3><p style="color: white">"EN ESTE SITIO ENCONTRARA LIBROS, TEXTOS BREVES, VIDEOS, SITIOS DE INTERES Y LA HISTORIA Y BIOGRAFIA DE ALGUNOS FILOSOFOS"</h3>
-	   	
-		<button class="my-button"><a href="comenzar.html"><h2><em><p style="color: YELLOW "><strong><u>"INICIAR"</u></h2></a></em></button></strong></u>
-		<style>
-.my-button {
-  width: 150px;
-  height: 80px;
-  background-color: #5d4037;
-  color: white;
-  font-family: arial;
-  border: 2px solid black;
-  border-radius: 30px;
-  cursor: pointer;
-  text-align: ;
-  padding: 7px;
-  display: inline-block;
-}
+      <div class="dropdown">
+        <button class="dropbtn"><h4>HISTORIA DE LA FILOSOFIA</h4> <span>⌄</span></button>
+        <div class="dropdown-menu">
+          <a href="https://www.youtube.com/watch?v=hUl4VF4id2o&list=PLQoiT79WaIN3Ba9Nf0gYjhoti-Nily2UR">GRANDES FILOSOFOS DE LA HISTORIA. CANAL A.</a>
+				 
+								<a href="Carpio, Adolfo P - Principios De Filosofia.pdf">PRINCIPIOS DE FILOSOFÍA. CARPIO ADOLFO</A>
+								<A HREF="LA FILOSOFIA Y EL BARRO DE LA HISTORIA - JOSE PABLO FEINMANN (1) (1).PDF">LA FILOSOFÍA. EL BARRO DE LA HISTORIA. FEINMANN J PABLO</A>
+								<A HREF="HISTORIA DE LA FILOSOFÍA1.PDF">HISTORIA DE LA FILOSOFÍA. NICOLÁS ABBAGNANO. VOLUMEN I</A>
+								<A HREF="HISTORIA DE LA FILOSOFÍA2.PDF">HISTORIA DE LA FILOSOFÍA. NICOLÁS ABBAGNANO. VOLUMEN II</A>
+								<A HREF="HISTORIA DE LA FILOSOFÍA3.PDF">HISTORIA DE LA FILOSOFÍA. NICOLÁS ABBAGNANO. VOLUMEN III</A>
+								<A HREF="HISTORIA DE LA FILOSOFÍA. VOLUMEN41.PDF">HISTORIA DE LA FILOSOFÍA. NICOLÁS ABBAGNANO. VOLUMEN IV. TOMO 1</A>
+								<A HREF="HISTORIA DE LA FILOSOFÍA42.PDF">HISTORIA DE LA FILOSOFÍA. NICOLÁS ABBAGNANO. VOLUMEN IV. TOMO 2</A>
+								<A HREF="HERDER-IDEAS-PARA-UNA-FILOSOFIA-DE-LA-HISTORIA-DE-LA-HUMANIDAD P!.PDF">IDEAS, PARA UNA FILOSOFIA DE LA HISTORIA DE LA HUMANIDAD. PARTE 1</A>
+				 <A HREF="HERDER-IDEAS-PARA-UNA-FILOSOFIA-DE-LA-HISTORIA-DE-LA-HUMANIDAD P2.PDF">IDEAS, PARA UNA FILOSOFIA DE LA HISTORIA DE LA HUMANIDAD. PARTE 2. HERDER</A>
+        </div>
+      </div>
 
-.my-button:hover {
-  background-color: green;
-}
+      <div class="dropdown">
+        <button class="dropbtn"><h4>MIS TEXTOS</h4> <span>⌄</span></button>
+        <div class="dropdown-menu">
+          <a href="Que es la filosofía.pdf">¿Qué es la filosofía?</a>
+				           <a href="Aristoteles la felicidad.pdf">Aristoteles, la filosofía, la felicidad y YO</a>
+						   <a href="la idea de una vida buena en medio de una mala vida CP.pdf">La idea de una vida buena, interpretando a Judith Butler</a>
+								<a href="Afirmar que no es cierto.pdf">Dios, la filosofía y yo</a>
+								<a href="filopoliscarlos.pdf">La Filosofía y la Política.</a>
+								<a href="https://www.youtube.com/watch?v=1Fti2wfNeHQ">Dios, la filosofía y yo. Audio Parte I</a>
+								<a href="https://www.youtube.com/watch?v=w4ni1QoPOlA.pdf">Dios, la filosofía y yo. Audio Parte II</a>
+								<a href="https://www.youtube.com/watch?v=NRndl3XNrWw">Dios, la filosofía y yo. Audio Parte III</a>
+								<a href="https://www.youtube.com/watch?v=mKTH_kLWkNs">Dios, la filosofía y yo. Audio Parte IV</a>
+								<a href="Interpretando a spinoza.pdf">Interpretando a Spinoza</a>
+								<a href="Por esas cosas de la vida.pdf">Por esas cosas de la vida</a>
+								<a href="las manos2024.mp3">Las manos de mi vida. Audio</a>
+								<a href="Las manos de mi vida.pdf">Las manos de mi vida. Texto.</a>
+								<a href="Una mañana tranquila.pdf">Un café. Un relato que nunca paso</a>
+								<a href="un rioCarlos.pdf">Un Río un texto breve. Una historia. La vida</a>
+								<a href="https://www.youtube.com/watch?v=jeKr7jiEBnI">Un Río un texto breve. Una historia. La vida(VIDEO)</a>
+								<a href="discurso50años27092025.pdf">Discurso 50 Años como egresados Ingenieros Agrónomos Fac Cs Agropecuarias UNC.</a>
+								</div>
+      </div>
+	  <div class="dropdown">
+        <button class="dropbtn"><h4>TALLERES UPAMI-UNC</h4> <span>⌄</span></button>
+        <div class="dropdown-menu">
+		<a href="TALLEROTOÑO2026.html">Taller otoño 2026</a>
+		<a href="TALLERprimavera2025.html">Taller primavera 2025</a>
+		<a href="TALLEROTOÑO2025.html">Taller otoño 2025</a>
+		<a href="TALLER2024.html">Taller primavera. 2024.</a>    
+        <a href="curzaupami.html">Filosofía CURZAUPAMI</a>
+		</div>
+      </div>
+<div class="dropdown">
+        <button class="dropbtn"><h4>VIDEOS</h4><span>⌄</span></button>
+        <div class="dropdown-menu">
+		<a href=https://www.youtube.com/watch?v=kJ8kT0-_fk8">Presentación libro Idiologias. Aleman J.</a>
+				 <a href="https://www.youtube.com/embed/UXDXLYANF5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe">La cuestión de la ideología. Aleman J</a>
+								<a href="https://www.youtube.com/playlist?list=PL8ZfEptaIREfWPnlhXH2VpvgyYxR-cYEq">Filosofía aquí y ahora. Feinmann José P </a>
+								<a href="https://www.youtube.com/@filosofiaaquiyahora9169/videos">Filosofía aquí y ahora. Feinmann José P </a>
+								<a href="https://www.youtube.com/watch?v=9UGcF72tHAg&list=PLS7zo1ycVQfkBZ6LzVPpCgZqkbK3Xzshw">Darío Sztajnszrajber. Clases Universidad Libre</a>
+							    <a href="https://www.youtube.com/watch?v=1ep_OcxPYGg">Alejandro Dolina con Darío Sztajnszrajber </a>
+								<a href="https://www.youtube.com/watch?v=wOjHYzRuNBU">Spinoza por Diego Tatian</a>
+								<a href="https://www.youtube.com/watch?v=AlQof12AGz0&pp=ygUbdW5pdmVyc2lkYWQgbGlicmUgZmlsb3NvZmlh">Subjetividad y poder. Esther Diaz</a>
+								<a href="https://www.youtube.com/watch?v=pd48SfUMy1U&list=PLdg7I4L3LiDVSACywEQpTp844ck4KrBCm">Los maestros del pensamiento. Abraham Tómas</a>								
+								<a href="https://www.youtube.com/watch?v=RHJH35jPJ3w">Heidegger | Por Darío Sztajnszrajber</a>
+								<a href="https://www.youtube.com/watch?v=T3fNklArb6Q">Judith Butler - Cuerpos que todavía importan</a>
+								<a href="https://www.youtube.com/watch?v=ZeRJ4pympuM">Creando capacidades - Martha Nussbaum</a>
+								<a href="https://www.youtube.com/watch?v=EpoiGzmm8RA">La ira y su contrario Martha Nussbaum</a>
+								<a href="https://www.youtube.com/playlist?list=PL-UaTZnN7ciWEYYrcQDViMrWsdS1OabWL">Filosofía- Filósofos Canal A</a>
+								<a href="https://www.youtube.com/watch?app=desktop&v=dPT74lDz3dg">Los desafíos de la democracia en el siglo XXI</a>
+								<a href="https://www.facultadlibre.org/filosofia-8-libros-dario-sztajnszrajber">Filosofía en 8 libros. Dario Sztajnszrajber</a>
+								<a href="https://www.youtube.com/watch?v=gJ5UQKDeNLM&list=PLGDZQYren6SUOm-enfe5KgRmgpyxi8vFE&index=1">Historia de la filosofía. Universidad libre</a>
+								<a href="https://www.youtube.com/playlist?list=PL9aTN4Co7wslLspZEJ5_6ILibD5B6fRy4">Curso sobre David Hume</a>
+								<a href="https://www.youtube.com/watch?v=uyykQ-Vhfu8&t=131s">Eurocentrismo 1: Aimé Cesaire y el discurso sobre el colonialismo</a>
+								<a href="https://www.youtube.com/watch?v=TwY1CrIt6lY&t=414s">Eurocentrismo 2: Filosofía latinoamericana</a>
+								<a href="https://www.youtube.com/watch?v=hri_f9vMe10">Eurocentrismo 3: Edward Said y el orientalismo</a>
+								<a href="https://www.youtube.com/watch?v=zGvHQ6Zs04w&t=967s">Eurocentrismo 4: Aníbal Quijano y la colonialidad del poder</a>
+								<a href="https://www.youtube.com/watch?v=9vSdhMDF8Ug">Eurocentrismo 5: Wallerstein y las ciencias sociales</a>
+								<a href="https://www.youtube.com/watch?v=XNQHFmCxQ54&list=RDCMUCFQW0lVCtANfI7uX7dckh4Q&index=6">Eurocentrismo 6 - Kant y la mayoría de edad</a>
+								<a href="https://www.youtube.com/watch?v=VrEIREut0_M&list=RDCMUCFQW0lVCtANfI7uX7dckh4Q&index=7">Eurocentrismo 7 - Bárbaros, Salvajes, Primitivos</a>
+								<a href="https://www.youtube.com/watch?v=DSAknDejkTY&list=PLJtilfDswj1fZ44cbYulhrfevyb4n0f4Q">Perspectivas y tradiciones de la filosofía política. Andrés Rosler</a>
+								<a href="https://www.youtube.com/watch?v=SaXetXutuJ0">Documental Así Hablo Zaratrusta</a>
+      </div>
+		</div>
+      <a href="SITIOS.html"><h4>SITIOS WEB DE INTERES</h4></a>
+      <a href="biblionueva.html"><h4>BIBLIOTECA</h4></a>
+    </div>
+    
+</header>
+<main>
+  <main>
+  <div class="hero">
+    <div class="hero-note">
+      <h1>FILOSOFÍA</h1>
+      <div class="sub">Un camino de búsqueda</div>
+      
+      <div class="signature">Carlos Rafael Pendini</div>
+    </div>
+  </div>
+  
+  <div class="doors">
+    <a class="door" id="autores"><div class="icon">○</div><h3>AUTORES</h3><p>Los filósofos y pensadores que nos inspiran.</p></a>
+    <a class="door" id="obras"><div class="icon">▢</div><h3>OBRAS</h3><p>Libros y textos para leer y explorar.</p></a>
+    <a class="door" id="preguntas"><div class="icon">?</div><h3>PREGUNTAS</h3><p>Las grandes preguntas de la filosofía.</p></a>
+    <a class="door"><div class="icon">▶</div><h3>VIDEOS</h3><p>Clases, entrevistas y conversaciones.</p></a>
+    <a class="door" id="textos"><div class="icon">✎</div><h3>MIS TEXTOS</h3><p>Mis lecturas, reflexiones y escritos.</p></a>
+    <a class="door" id="taller"><div class="icon">◌</div><h3>TALLERES UPAMI-UNC</h3><p>Un espacio para pensar juntos.</p></a>
+  </div>
 
-.my-button:active {
-  background-color: #855959;
-}
-</style>
-		<text><em><h2><p style="color: YELLOW">-- Pulsar sobre  <u>"INICIAR"</u> para visitar el sitio--</text></h2></em>
-	    
-		<body>
+  <section class="about">
+    <div>
+      <div class="eyebrow">SOBRE EL SITIO</div>
+      <h2>¿Por qué este sitio?</h2>
+      <p>La filosofía me acompaña desde siempre. Es una forma de mirar el mundo, de comprenderlo y, sobre todo, de preguntarme.</p>
+      <p>Este sitio nace de esa búsqueda: un espacio personal, sin pretensiones académicas, para compartir lecturas, ideas, dudas y conversaciones con quienes también sienten curiosidad por el sentido de las cosas.</p>
+      <p>No se trata de enseñar filosofía, sino de compartir preguntas y reflexiones que puedan ayudarnos a pensar mejor nuestra vida, nuestra época y el mundo que habitamos.</p>
+      <div class="signature">Carlos Rafael Pendini</div>
+    </div>
+    <div class="about-card">
+      <p class="quote">“La filosofía no da respuestas definitivas, pero nos enseña a hacer mejores preguntas.”</p>
+    </div>
+  </section>
+
+  <div class="start" id="biblioteca">
+    <div class="start-inner">
+      <div class="eyebrow">PARA COMENZAR</div>
+      <h2>¿Por dónde empezar?</h2>
+      <div class="start-grid">
+        <div class="start-item"><h3>Conocer la filosofía</h3><p>Una introducción para comenzar tu propio camino.</p></div>
+        <div class="start-item"><h3>Conocer a los filósofos</h3><p>De Sócrates a los pensadores contemporáneos.</p></div>
+        <div class="start-item"><h3>Pensar una pregunta</h3><p>Libertad · poder · verdad · felicidad · Dios · política · tecnología.</p></div>
+      <div class="start-item"><h3>Contacto</h3><p>cpendini@hotmail.com</p><p>cpendini@agro.unc.edu.ar</p></div>
+	  </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div><strong>CARLOSFILO</strong><br>FILOSOFÍA</div>
+  <div><em>Leer · Preguntar · Pensar · Compartir</em></div>
+  <div>© Carlos Rafael Pendini</div>
+</footer>
+</body>
+</html>
 
 <main>
 
@@ -74,7 +510,7 @@ h3 {background-color: #5d4037;}
 <input type="hidden" name="_captcha" value="false">
 </form>
 
-		<text><h3><em><p style="color: white">Carlos Rafael Pendini. contacto: cpendini@hotmail.com
+		<text><h3><em><p style="color: white">Carlos Rafael Pendini. contacto: cpendini@hotmail.com cpendini@agro.unc.edu.ar
 		   </em>
 		   <h1><a href="https://www.google.com"><p style="color: white">"SALIR"</h1></a></center>
 </body>  
