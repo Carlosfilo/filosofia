@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Selección de sitios de filosofía en Internet.">
+<title>Sitios de Filosofía | Carlosfilo</title>
+<style>
+  :root {
+    --ink:#252525;
+    --muted:#686868;
+    --paper:#f7f4ee;
+    --card:#fffdf9;
+    --line:#ded8cd;
+    --accent:#5d5144;
+    --accent-soft:#ece6dc;
+    --shadow:0 8px 24px rgba(50,42,32,.07);
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(255,255,255,.9), transparent 34%),
+      var(--paper);
+    color:var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height:1.65;
+  }
+  .page {
+    width:min(1120px, calc(100% - 32px));
+    margin:0 auto;
+    padding:34px 0 60px;
+  }
+  header {
+    text-align:center;
+    padding:22px 18px 28px;
+  }
+  .eyebrow {
+    margin:0 0 10px;
+    font-family:Arial, sans-serif;
+    font-size:.78rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  h1 {
+    margin:0;
+    font-size:clamp(2rem, 5vw, 3.6rem);
+    line-height:1.1;
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+  .ornament {
+    width:72px;
+    height:1px;
+    margin:22px auto;
+    background:var(--accent);
+  }
+  .intro {
+    max-width:700px;
+    margin:0 auto;
+    color:#514b43;
+    font-size:1.12rem;
+  }
+  .hero-image {
+    display:block;
+    width:min(100%, 720px);
+    max-height:270px;
+    object-fit:cover;
+    margin:18px auto 8px;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+  }
+  .section-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:20px;
+    margin:34px 0 18px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:13px;
+  }
+  h2 {
+    margin:0;
+    font-size:1.55rem;
+    font-weight:600;
+  }
+  .count {
+    font-family:Arial, sans-serif;
+    font-size:.82rem;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  .tools {
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:22px;
+  }
+  #search {
+    flex:1 1 300px;
+    min-width:220px;
+    padding:13px 16px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:white;
+    color:var(--ink);
+    font:15px Arial, sans-serif;
+    outline:none;
+  }
+  #search:focus {
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .filter {
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink);
+    border-radius:10px;
+    padding:11px 14px;
+    font:14px Arial, sans-serif;
+    cursor:pointer;
+  }
+  .filter.active, .filter:hover {
+    background:var(--accent);
+    color:white;
+    border-color:var(--accent);
+  }
+  .sites {
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:14px;
+  }
+  .site-card {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    min-height:128px;
+    padding:20px 48px 18px 20px;
+    text-decoration:none;
+    color:var(--ink);
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:13px;
+    box-shadow:0 2px 5px rgba(50,42,32,.025);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .site-card:hover {
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+    border-color:#c8bfb2;
+  }
+  .card-category {
+    font-family:Arial, sans-serif;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+  .card-title {
+    font-size:1.08rem;
+    line-height:1.38;
+    font-weight:600;
+  }
+  .card-arrow {
+    position:absolute;
+    right:18px;
+    top:18px;
+    font:20px Arial, sans-serif;
+    color:var(--accent);
+  }
+  .empty {
+    display:none;
+    text-align:center;
+    padding:40px 15px;
+    color:var(--muted);
+    font-style:italic;
+  }
+  footer {
+    margin-top:48px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    text-align:center;
+    color:var(--muted);
+    font-size:.92rem;
+  }
+  @media (max-width:720px) {
+    .page { width:min(100% - 20px, 1120px); padding-top:15px; }
+    header { padding-top:18px; }
+    .sites { grid-template-columns:1fr; }
+    .section-head { align-items:start; flex-direction:column; gap:4px; }
+    .intro { font-size:1rem; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <p class="eyebrow">Carlosfilo · Recursos para pensar</p>
+    <h1>Sitios de Filosofía</h1>
+    <div class="ornament"></div>
+    <p class="intro">Aquí puede acceder a sitios con material de filosofía: bibliotecas, universidades, revistas, autores y otros espacios dedicados al pensamiento.</p>
+    <img class="hero-image" src="imagenes/sitios.jpg" alt="Sitios de filosofía">
+  </header>
+
+  <section aria-labelledby="listado">
+    <div class="section-head">
+      <h2 id="listado">Algunos sitios de filosofía en Internet</h2>
+      <span class="count" id="count"></span>
+    </div>
+
+    <div class="tools">
+      <input id="search" type="search" placeholder="Buscar por nombre o tema…" aria-label="Buscar sitios">
+      <button class="filter active" data-filter="Todos">Todos</button>
+      <button class="filter" data-filter="Bibliotecas y libros">Bibliotecas</button>
+      <button class="filter" data-filter="Filosofía y autores">Autores</button>
+      <button class="filter" data-filter="Universidades">Universidades</button>
+      <button class="filter" data-filter="Revistas">Revistas</button>
+      <button class="filter" data-filter="Audiovisual">Audiovisual</button>
+    </div>
+
+    <div class="sites" id="sites">
+      <a class="site-card" href="https://bibliotecadigital.jcyl.es/es/consulta/registro.do?id=22661" target="_blank" rel="noopener noreferrer" data-title="biblioteca digital de castilla y leon" data-category="Bibliotecas y libros">
+        <span class="card-category">Bibliotecas y libros</span>
+        <span class="card-title">BIBLIOTECA DIGITAL DE CASTILLA Y LEON</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.bl.uk/catalogues-and-collections" target="_blank" rel="noopener noreferrer" data-title="biblioteca britanica" data-category="Bibliotecas y libros">
+        <span class="card-category">Bibliotecas y libros</span>
+        <span class="card-title">BIBLIOTECA BRITANICA</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.cervantesvirtual.com/" target="_blank" rel="noopener noreferrer" data-title="biblioteca virtual miguel de cervantes" data-category="Bibliotecas y libros">
+        <span class="card-category">Bibliotecas y libros</span>
+        <span class="card-title">BIBLIOTECA VIRTUAL MIGUEL DE CERVANTES</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://es.wikipedia.org/wiki/Anexo:Cronolog%C3%ADa_de_fil%C3%B3sofos_occidentales" target="_blank" rel="noopener noreferrer" data-title="cronologia de filosofos occidentales" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">CRONOLOGIA DE FILOSOFOS OCCIDENTALES</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://es.wikipedia.org/wiki/Anexo:Cronolog%C3%ADa_de_los_fil%C3%B3sofos_orientales" target="_blank" rel="noopener noreferrer" data-title="cronologia de filosofos orientales" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">CRONOLOGIA DE FILOSOFOS ORIENTALES</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.elestudiantedigital.com/" target="_blank" rel="noopener noreferrer" data-title="el estudiante digital" data-category="Sitios de filosofía">
+        <span class="card-category">Sitios de filosofía</span>
+        <span class="card-title">EL ESTUDIANTE DIGITAL</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.elejandria.com/" target="_blank" rel="noopener noreferrer" data-title="elejandria" data-category="Sitios de filosofía">
+        <span class="card-category">Sitios de filosofía</span>
+        <span class="card-title">ELEJANDRIA</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.philosophia.cl/biblioteca.htm" target="_blank" rel="noopener noreferrer" data-title="facultad de filosofia u. de chile" data-category="Universidades">
+        <span class="card-category">Universidades</span>
+        <span class="card-title">FACULTAD DE FILOSOFIA U. DE CHILE</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://ffyh.unc.edu.ar/biblioteca/" target="_blank" rel="noopener noreferrer" data-title="biblioteca de la facultad de filosofia y humanidades unc" data-category="Bibliotecas y libros">
+        <span class="card-category">Bibliotecas y libros</span>
+        <span class="card-title">BIBLIOTECA DE LA FACULTAD DE FILOSOFIA Y HUMANIDADES UNC</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://biblioteca.ucm.es/fsl/proyeccion-de-suarez-en-la-filosofia-moderna-filosofos" target="_blank" rel="noopener noreferrer" data-title="facultad de filosofia. universidad complutense. madrid" data-category="Universidades">
+        <span class="card-category">Universidades</span>
+        <span class="card-title">FACULTAD DE FILOSOFIA. UNIVERSIDAD COMPLUTENSE. MADRID</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.facultadlibre.org/rizoma" target="_blank" rel="noopener noreferrer" data-title="facultad libre" data-category="Universidades">
+        <span class="card-category">Universidades</span>
+        <span class="card-title">FACULTAD LIBRE</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.20minutos.es/noticia/4384901/0/lista-grandes-filosofos-historia/" target="_blank" rel="noopener noreferrer" data-title="grandes filosofos de la historia" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">GRANDES FILOSOFOS DE LA HISTORIA</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://humanidades.com/historia-de-la-filosofia/" target="_blank" rel="noopener noreferrer" data-title="historia de la filosofia" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">HISTORIA DE LA FILOSOFIA</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.ungs.edu.ar/coleccion-libro/libros-de-descarga-gratuita" target="_blank" rel="noopener noreferrer" data-title="universidad nacional de general sarmiento" data-category="Universidades">
+        <span class="card-category">Universidades</span>
+        <span class="card-title">Universidad Nacional de General Sarmiento</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://es.wikipedia.org/wiki/Historia_de_la_filosof%C3%ADa_occidental" target="_blank" rel="noopener noreferrer" data-title="historia de la filosofia occidental" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">HISTORIA DE LA FILOSOFIA OCCIDENTAL</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://vaventura.com/asignatura/filosofia-bachillerato/principales-filosofos-la-historia" target="_blank" rel="noopener noreferrer" data-title="historia de la filosofia. principales filosofos" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">HISTORIA DE LA FILOSOFIA. PRINCIPALES FILOSOFOS</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.lafondafilosofica.com/" target="_blank" rel="noopener noreferrer" data-title="la fonda filosofica. darin macnabb" data-category="Sitios de filosofía">
+        <span class="card-category">Sitios de filosofía</span>
+        <span class="card-title">LA FONDA FILOSOFICA. Darin MacNabb</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.webdianoia.com/pages/filosofos.htm" target="_blank" rel="noopener noreferrer" data-title="lista de filosofos por orden albabetico y orden cronologico" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">LISTA DE FILOSOFOS POR ORDEN ALBABETICO Y ORDEN CRONOLOGICO</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://infolibros.org/libros-pdf-gratis/filosofia/para-ninos/" target="_blank" rel="noopener noreferrer" data-title="libros de filosofia para niños" data-category="Bibliotecas y libros">
+        <span class="card-category">Bibliotecas y libros</span>
+        <span class="card-title">LIBROS DE FILOSOFIA PARA NIÑOS</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.psicologiaymente.com/cultura/filosofos-mas-famosos-importantes" target="_blank" rel="noopener noreferrer" data-title="los treinta y tres filosofos mas importantes de la historia" data-category="Filosofía y autores">
+        <span class="card-category">Filosofía y autores</span>
+        <span class="card-title">LOS TREINTA Y TRES FILOSOFOS MAS IMPORTANTES DE LA HISTORIA</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://redfilosofia.es/blog/2015/09/10/revista-pensamiento-al-margen-call-for-papers/" target="_blank" rel="noopener noreferrer" data-title="revista pensamiento al margen. red española de filosofia" data-category="Revistas">
+        <span class="card-category">Revistas</span>
+        <span class="card-title">REVISTA PENSAMIENTO AL MARGEN. RED ESPAÑOLA DE FILOSOFIA</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://latinoamericanarevistas.org/paginas-de-filosofia/" target="_blank" rel="noopener noreferrer" data-title="paginas de filosofia. facultad de humanidades u.s.chile" data-category="Universidades">
+        <span class="card-category">Universidades</span>
+        <span class="card-title">PAGINAS DE FILOSOFIA. FACULTAD DE HUMANIDADES U.S.CHILE</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://revistafilosofia.uchile.cl/" target="_blank" rel="noopener noreferrer" data-title="revista de filosofia. univ. de chile" data-category="Revistas">
+        <span class="card-category">Revistas</span>
+        <span class="card-title">REVISTA DE FILOSOFIA. UNIV. DE CHILE</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.bn.gov.ar/colecciones-digitales/publicaciones" target="_blank" rel="noopener noreferrer" data-title="biblioteca nacional mariano moreno" data-category="Bibliotecas y libros">
+        <span class="card-category">Bibliotecas y libros</span>
+        <span class="card-title">BIBLIOTECA NACIONAL MARIANO Moreno</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://www.youtube.com/@SilvanadeRobles" target="_blank" rel="noopener noreferrer" data-title="filosofía en imágenes. silvana robles" data-category="Audiovisual">
+        <span class="card-category">Audiovisual</span>
+        <span class="card-title">Filosofía en imágenes. Silvana Robles</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://journals.openedition.org/lirico/" target="_blank" rel="noopener noreferrer" data-title="revista de la red interuniversitaria de estudios sobre las literaturas rioplatenses conteraneas en francia." data-category="Revistas">
+        <span class="card-category">Revistas</span>
+        <span class="card-title">Revista de la red Interuniversitaria de estudios sobre las literaturas rioplatenses conteraneas en francia.</span>
+        <span class="card-arrow">↗</span>
+      </a>
+      <a class="site-card" href="https://micropolitica.com.ar/" target="_blank" rel="noopener noreferrer" data-title="pensamiento crítico decolonial." data-category="Sitios de filosofía">
+        <span class="card-category">Sitios de filosofía</span>
+        <span class="card-title">Pensamiento Crítico Decolonial.</span>
+        <span class="card-arrow">↗</span>
+      </a>
+    </div>
+    <div class="empty" id="empty">No encontramos sitios que coincidan con la búsqueda.</div>
+  </section>
+
+  <footer>
+    Un espacio para leer, explorar y seguir haciendo preguntas.
+  </footer>
+</main>
+
+<script>
+const cards = [...document.querySelectorAll('.site-card')];
+const search = document.getElementById('search');
+const count = document.getElementById('count');
+const empty = document.getElementById('empty');
+let currentFilter = 'Todos';
+
+function render() {
+  const q = search.value.trim().toLowerCase();
+  let visible = 0;
+  cards.forEach(card => {
+    const matchText = card.dataset.title.includes(q);
+    const matchCategory = currentFilter === 'Todos' || card.dataset.category === currentFilter;
+    const show = matchText && matchCategory;
+    card.style.display = show ? 'flex' : 'none';
+    if (show) visible++;
+  });
+  count.textContent = `${visible} sitio${visible === 1 ? '' : 's'}`;
+  empty.style.display = visible ? 'none' : 'block';
+}
+
+document.querySelectorAll('.filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+search.addEventListener('input', render);
+render();
+</script>
+</body>
+</html>

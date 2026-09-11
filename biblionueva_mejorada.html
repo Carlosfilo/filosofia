@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca virtual — Filosofía</title>
+<meta name="description" content="Biblioteca virtual de libros, artículos y resúmenes de temas filosóficos.">
+<style>
+:root{
+  --bg:#f3f0e8; --paper:#fffdf8; --ink:#252525; --muted:#6c675d;
+  --accent:#6f5b3e; --accent2:#a78b63; --line:#ded6c8;
+  --shadow:0 10px 30px rgba(55,45,30,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+header{background:linear-gradient(135deg,#2f2b25,#625440);color:#fff;padding:54px 24px 48px;text-align:center}
+header .eyebrow{font:600 12px/1.2 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.78}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.12;margin:14px auto 12px;font-weight:500;letter-spacing:.01em}
+header p{max-width:850px;margin:0 auto;color:#eee7dc;font-size:18px}
+.wrap{max-width:1180px;margin:auto;padding:28px 20px 70px}
+.toolbar{position:sticky;top:0;z-index:10;background:rgba(243,240,232,.94);backdrop-filter:blur(8px);padding:16px 0;border-bottom:1px solid var(--line)}
+.search{width:100%;padding:14px 18px;border:1px solid #cfc5b5;border-radius:10px;background:white;font:16px Arial,sans-serif;outline:none}
+.search:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(167,139,99,.15)}
+.alphabet{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.alphabet button{border:1px solid #cfc5b5;background:#fff;border-radius:999px;padding:6px 10px;cursor:pointer;font-weight:600;color:var(--accent)}
+.alphabet button:hover,.alphabet button.active{background:var(--accent);color:#fff}
+.meta{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:24px 0 14px;color:var(--muted);font:13px Arial,sans-serif}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{display:block;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;box-shadow:0 3px 10px rgba(55,45,30,.035);transition:.18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#c5b59d}
+.card .letter{font:700 11px Arial,sans-serif;letter-spacing:.12em;color:var(--accent2);margin-bottom:7px}
+.card h2{font-size:17px;line-height:1.35;margin:0 0 9px;font-weight:600}
+.card .open{font:12px Arial,sans-serif;color:var(--accent);opacity:.85}
+.empty{text-align:center;padding:50px;color:var(--muted);display:none}
+footer{text-align:center;color:var(--muted);font:13px Arial,sans-serif;padding:30px}
+.note{background:#ebe5d9;border-left:4px solid var(--accent2);padding:15px 18px;margin:22px 0;font-size:15px}
+@media(max-width:600px){header{padding:38px 18px}header p{font-size:16px}.wrap{padding:18px 12px 50px}.grid{grid-template-columns:1fr}.card{padding:15px}.meta{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Carlosfilo · Biblioteca virtual</div>
+  <h1>Libros, artículos y lecturas filosóficas</h1>
+  <p>Un espacio para buscar, leer y volver a las preguntas que la filosofía mantiene abiertas.</p>
+</header>
+<main class="wrap">
+  <div class="note"><strong>Biblioteca virtual.</strong> Esta colección reúne material descargado de diferentes sitios de Internet con acceso y descarga gratuita, tal como se presenta en la página original.</div>
+  <section class="toolbar" aria-label="Herramientas de búsqueda">
+    <input id="search" class="search" type="search" placeholder="Buscar por título, autor o palabra clave…" aria-label="Buscar">
+    <div class="alphabet"><button type="button" class="active" data-letter-filter="*">Todos</button><button type="button" data-letter-filter="A">A</button><button type="button" data-letter-filter="C">C</button><button type="button" data-letter-filter="D">D</button><button type="button" data-letter-filter="E">E</button><button type="button" data-letter-filter="F">F</button><button type="button" data-letter-filter="G">G</button><button type="button" data-letter-filter="H">H</button><button type="button" data-letter-filter="I">I</button><button type="button" data-letter-filter="J">J</button><button type="button" data-letter-filter="L">L</button><button type="button" data-letter-filter="M">M</button><button type="button" data-letter-filter="N">N</button><button type="button" data-letter-filter="O">O</button><button type="button" data-letter-filter="P">P</button><button type="button" data-letter-filter="Q">Q</button><button type="button" data-letter-filter="R">R</button><button type="button" data-letter-filter="S">S</button><button type="button" data-letter-filter="T">T</button><button type="button" data-letter-filter="U">U</button><button type="button" data-letter-filter="V">V</button></div>
+  </section>
+  <div class="meta"><span id="count">Mostrando 222 documentos</span><span>Ordenados alfabéticamente</span></div>
+  <section id="grid" class="grid"><a class="card" href="Analectas-Confucio.pdf" data-title="analectas confucio. hanfang, a" data-letter="A">
+      <div class="letter">A</div>
+      <h2>ANALECTAS CONFUCIO. HANFANG, A</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="16109-Texto%20do%20artigo-39333-2-10-20130731.pdf" data-title="antifilosofia e izquierda lacaniana. el debate contemporaneo. aleman jorge(entrevista)" data-letter="A">
+      <div class="letter">A</div>
+      <h2>ANTIFILOSOFIA E IZQUIERDA LACANIANA. EL DEBATE CONTEMPORANEO. ALEMAN JORGE(ENTREVISTA)</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Alteridad.pdf" data-title="alteridad. un recorrido filosofico. ruiz de la presa, javier" data-letter="A">
+      <div class="letter">A</div>
+      <h2>ALTERIDAD. UN RECORRIDO FILOSOFICO. RUIZ DE LA PRESA, JAVIER</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialnet-AlgunasIdeasDeFreudAcercaDeLaReligion-4059035.pdf" data-title="algunas ideas de freud acerca de la religion. moritz maria cristina" data-letter="A">
+      <div class="letter">A</div>
+      <h2>ALGUNAS IDEAS DE FREUD ACERCA DE LA RELIGION. MORITZ MARIA CRISTINA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Alexis.pdf" data-title="alexis de tocqueville: libertad, igualdad, despotismo. fundacion para el anasisis y estudios sociales. autores varios." data-letter="A">
+      <div class="letter">A</div>
+      <h2>ALEXIS DE TOCQUEVILLE: LIBERTAD, IGUALDAD, DESPOTISMO. FUNDACION PARA EL ANASISIS Y ESTUDIOS SOCIALES. AUTORES VARIOS.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="16109-Texto do artigo-39333-2-10-20130731.pdf" data-title="antifilosofía e izquierda lacaniana. el debate contemporaneo. aleman jorge(entrevista)" data-letter="A">
+      <div class="letter">A</div>
+      <h2>ANTIFILOSOFÍA E IZQUIERDA LACANIANA. EL DEBATE CONTEMPORANEO. ALEMAN JORGE(ENTREVISTA)</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="aposocra.pdf" data-title="apologia de socrates . discurso de socrates." data-letter="A">
+      <div class="letter">A</div>
+      <h2>APOLOGIA DE SOCRATES . DISCURSO DE SOCRATES.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialnet-AproximacionCartesianaALaEtiopatogeniaDeLaMelancol-3437222.pdf" data-title="aproximacion cartesiana a la etiopatogenia de la melancolia. el papel modulador de la glandula pineal sobre las pasiones del alma. lopez muñoz francisco." data-letter="A">
+      <div class="letter">A</div>
+      <h2>APROXIMACION CARTESIANA A LA ETIOPATOGENIA DE LA MELANCOLIA. EL PAPEL MODULADOR DE LA GLANDULA PINEAL SOBRE LAS PASIONES DEL ALMA. LOPEZ MUÑOZ FRANCISCO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Aristoteles la Felicidad.pdf" data-title="aristoteles, filosofia, la etica, la felicidad y yo. pendini c r." data-letter="A">
+      <div class="letter">A</div>
+      <h2>ARISTOTELES, FILOSOFIA, LA ETICA, LA FELICIDAD Y YO. PENDINI C R.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Asi_hablo_Zaratustra-Friedrich_Nietzsche.pdf" data-title="asi hablo zaratrusta. nietzsche fedrerich" data-letter="A">
+      <div class="letter">A</div>
+      <h2>ASI HABLO ZARATRUSTA. NIETZSCHE FEDRERICH</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialnet-CaminandoPorLosAlrededoresDelSerConGianniVattimo-8040416.pdf" data-title="caminando por los alrededores del ser con gianni vattimo. leiro daniel m" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CAMINANDO POR LOS ALREDEDORES DEL SER CON GIANNI VATTIMO. LEIRO DANIEL M</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Claude Lefortlos derechos huma.pdf" data-title="claude lefort: los derechos humanos como el fundamento del orden democratico. cristobo matias" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CLAUDE LEFORT: LOS DERECHOS HUMANOS COMO EL FUNDAMENTO DEL ORDEN DEMOCRATICO. CRISTOBO MATIAS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Quijano.pdf" data-title="colonialidad del poder y clasificacion social anibal quijano" data-letter="C">
+      <div class="letter">C</div>
+      <h2>COLONIALIDAD DEL PODER Y CLASIFICACION SOCIAL ANIBAL QUIJANO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="1. Hilb Claudia.pdf" data-title="como fundar una comunidad despues del crimen. hilb claudia" data-letter="C">
+      <div class="letter">C</div>
+      <h2>COMO FUNDAR UNA COMUNIDAD DESPUES DEL CRIMEN. HILB CLAUDIA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="2. Anotaciones a un texto de Claudia Hilb. (1).pdf" data-title="como fundar una comunidad despues del crimen? anotaciones a un texto de claudia hilb. tatian diego" data-letter="C">
+      <div class="letter">C</div>
+      <h2>COMO FUNDAR UNA COMUNIDAD DESPUES DEL CRIMEN? ANOTACIONES A UN TEXTO DE CLAUDIA HILB. TATIAN DIEGO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="2. John L. Austin - Cmo hacer cosas con palabras.pdf" data-title="como hacer cosas con palabras. austin jhon l" data-letter="C">
+      <div class="letter">C</div>
+      <h2>COMO HACER COSAS CON PALABRAS. AUSTIN JHON L</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="como no temblar Derrida.pdf" data-title="como no temblar. derrida jacques" data-letter="C">
+      <div class="letter">C</div>
+      <h2>COMO NO TEMBLAR. DERRIDA JACQUES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="como-no-hablar-denegaciones.pdf" data-title="como no hablar denegaciones. derrida jacques" data-letter="C">
+      <div class="letter">C</div>
+      <h2>COMO NO HABLAR DENEGACIONES. DERRIDA JACQUES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="John Berger.pdf" data-title="con la esperanza entre los dientes. 12 tesis sobre la economia de los muertos. berger john" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CON LA ESPERANZA ENTRE LOS DIENTES. 12 TESIS SOBRE LA ECONOMIA DE LOS MUERTOS. BERGER JOHN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="vattimo-gianni-creer-que-se-creepdf_compress_compressed.pdf" data-title="creer que se cree. vattimo gianni" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CREER QUE SE CREE. VATTIMO GIANNI</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="critica-de-la-razon-instrumental.pdf" data-title="critica de la raz0n instrumental horkheimer max." data-letter="C">
+      <div class="letter">C</div>
+      <h2>CRITICA DE LA RAZ0N INSTRUMENTAL HORKHEIMER MAX.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="93-sartre-coleccic3b3n.pdf" data-title="critica de la razon dialectica. sartre jean p." data-letter="C">
+      <div class="letter">C</div>
+      <h2>CRITICA DE LA RAZON DIALECTICA. SARTRE JEAN P.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Critica de la razon pura Kant.pdf" data-title="critica de la razon pura . kant immanuel" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CRITICA DE LA RAZON PURA . KANT IMMANUEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Maria Florencia Lopez (2015). Cuerpos como potencias. Una mirada desde Spinoza.pdf" data-title="cuerpos como potencia. una mirada desde spinoza. lopez maria florencia" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CUERPOS COMO POTENCIA. UNA MIRADA DESDE SPINOZA. LOPEZ MARIA FLORENCIA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="J. DERRIDA, De la  Gramatolo.pdf" data-title="de la gramatologia. derrida j" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DE LA GRAMATOLOGIA. DERRIDA J</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="norberto_bobbio_de_la_razon_de_estado_al_gobierno_democratico.pdf" data-title="de la razon del estado al gobierno democratico. bobbio norberto" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DE LA RAZON DEL ESTADO AL GOBIERNO DEMOCRATICO. BOBBIO NORBERTO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="M-FOUCAULT-DEFENDER-LA-SOCIEDAD.pdf" data-title="defender la sociedad. foulcaut michel" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DEFENDER LA SOCIEDAD. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="DERRIDA_desde_el_sur20190813-124621-1yy6pt-libre.pdf" data-title="derrida desde el sur . derrida j y otros" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DERRIDA DESDE EL SUR . DERRIDA J Y OTROS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="El_espectro_del_marxismo.pdf" data-title="derrida y el espectro del marxismo. historia y politica . fernandez agis domingo" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DERRIDA Y EL ESPECTRO DEL MARXISMO. HISTORIA Y POLITICA . FERNANDEZ AGIS DOMINGO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Platon_Dialogos_Vol_1_Gredos_unlocked.pdf" data-title="dialogos 1. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS 1. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Platon%20dialogos%202.pdf" data-title="dialogos 2. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS 2. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Platon%20dialogos%203.pdf" data-title="dialogos 3. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS 3. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Platon-Dialogos-4-Republica.pdf" data-title="dialogos 4. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS 4. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Platon_Dialogos_5_Sofista.pdf" data-title="dialogos 5. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS 5. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Platon%20-%20Dialogos%20VI.pdf" data-title="dialogos 6. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS 6. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Platon%20-%20Dialogos%20VII%20-%20Cartas.pdf" data-title="dialogos 7. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS 7. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="platon-dialogos-09-leyes_-libros-VII-XII.pdf" data-title="dialogos libros del vii al xii. platon." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS LIBROS DEL VII AL XII. PLATON.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialogos%20Socraticos%20-%20Platon....pdf" data-title="dialogos socraticos . vasallos angel." data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS SOCRATICOS . VASALLOS ANGEL.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialogos_sobre_religion_natural.pdf" data-title="dialogos sobre la religion natural. hume david. traduccion o´gorman e" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS SOBRE LA RELIGION NATURAL. HUME DAVID. TRADUCCION O´GORMAN E</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="dialogos-sobre-la-religion-naturalpdf_compress.pdf" data-title="dialogos sobre la religion natural. hume david. traduccion mellizo c" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIALOGOS SOBRE LA RELIGION NATURAL. HUME DAVID. TRADUCCION MELLIZO C</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="dnnc586noArNBR76HHp4r1w6vC8dDjea8AHm4nFl.pdf" data-title="diferencia entre sujeto y subjetividad. aleman jorge" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIFERENCIA ENTRE SUJETO Y SUBJETIVIDAD. ALEMAN JORGE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="vattimo18-dios-es-amor%20(1).pdf" data-title="dios es amor, sino merece que lo matemos. (el dios debil de gianni vattimo). lozano pino jesus" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DIOS ES AMOR, SINO MERECE QUE LO MATEMOS. (EL DIOS DEBIL DE GIANNI VATTIMO). LOZANO PINO JESUS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Descartes-Discurso-Del-Metodo.pdf" data-title="discurso del metodo. descartes renee" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DISCURSO DEL METODO. DESCARTES RENEE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="EL_DISCURSO_RECTORAL_DE_1933_DE_MARTIN_H.pdf" data-title="discurso del rectorado. heidegger martin" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DISCURSO DEL RECTORADO. HEIDEGGER MARTIN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Discurso sobre la servidumbre voluntaria_compressed.pdf" data-title="discurso sobre la servidumbre voluntaria. etienne de la boetie" data-letter="D">
+      <div class="letter">D</div>
+      <h2>DISCURSO SOBRE LA SERVIDUMBRE VOLUNTARIA. ETIENNE DE LA BOETIE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="art08.pdf" data-title="edmund husserl: la idea de la fenomenologia. lambert cesar" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EDMUND HUSSERL: LA IDEA DE LA FENOMENOLOGIA. LAMBERT CESAR</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="518.-El-antiguoregimenylarevolucion.pdf" data-title="el antiguo regimen y la revolucion. de tocqueville alexis" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL ANTIGUO REGIMEN Y LA REVOLUCION. DE TOCQUEVILLE ALEXIS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="autores_humberto-maturana-francisco-varela-el-arbol-del-conocimiento.pdf" data-title="el arbol del conocimiento. las bases biologicas del entendimiento humano. maturana h r; varela f g." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL ARBOL DEL CONOCIMIENTO. LAS BASES BIOLOGICAS DEL ENTENDIMIENTO HUMANO. MATURANA H R; VARELA F G.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="EL_CONCEPTO_DE_FILOSOFIA_EN_WITTGENSTEIN.pdf" data-title="el concepto de filosofia de wittgenstein. fann k t" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL CONCEPTO DE FILOSOFIA DE WITTGENSTEIN. FANN K T</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="ecob,+NOMA0606120205A.PDF.pdf" data-title="el concepto de filosofia y la nocion del problema en wittgenstein y vazquez roca adolfo" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL CONCEPTO DE FILOSOFIA Y LA NOCION DEL PROBLEMA EN WITTGENSTEIN Y VAZQUEZ ROCA ADOLFO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="RousouuuEl_contrato_social.pdf" data-title="el contrato social. rousseau jean.j" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL CONTRATO SOCIAL. ROUSSEAU JEAN.J</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="casullo-el-debate-modernidad-posmodernidadpdf.pdf" data-title="el debate. modernidad posmodernidad. cassullo nicolas" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL DEBATE. MODERNIDAD POSMODERNIDAD. CASSULLO NICOLAS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="RANCIERE,%20J.%20-%20El-Desacuerdo-Politica-y-Filosofia.pdf" data-title="el desacuerdo, politica y filosofia. ranciere jacques." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL DESACUERDO, POLITICA Y FILOSOFIA. RANCIERE JACQUES.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Irvin_D_Yalom_El_dia_que_Nietzsche_lloro.pdf" data-title="el dia que nietzsche. yalom irvin d" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL DIA QUE NIETZSCHE. YALOM IRVIN D</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="rev11_tucidides.pdf" data-title="el discurso funebre de pericles. tucidides" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL DISCURSO FUNEBRE DE PERICLES. TUCIDIDES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Jurgen Habermas. el discurso filosofico de la modernidad.pdf" data-title="el discurso filosofico de la modernidad. habermas jurgen." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL DISCURSO FILOSOFICO DE LA MODERNIDAD. Habermas Jurgen.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="el espejodelasalmassimples.pdf" data-title="el espejo de las almas simples. porete margarita" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL ESPEJO DE LAS ALMAS SIMPLES. PORETE MARGARITA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="MontesquieuEspirituDeLasLeyescompressed.pdf" data-title="el espiritu de las leyes. montequie" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL ESPIRITU DE LAS LEYES. MONTEQUIE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Existencialismo%20humanismo%20Sartre.pdf" data-title="el existencialismo es un humanismo. jean-paul sartre." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL EXISTENCIALISMO ES UN HUMANISMO. JEAN-PAUL SARTRE.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="CamusAlbert El Extranjero.pdf" data-title="el extranjero. camus albert" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL EXTRANJERO. CAMUS ALBERT</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="G-VATTIMO-EL-FIN-DE-LA-MODERNIDAD.-NIHILISMO-Y-HERMENEUTICA-EN-LA-CULTURA-POSMODERNA.pdf" data-title="el fin de la modernidad. nihilismo y hermeneutica en la cultura posmoderna. vattimo gianni" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL FIN DE LA MODERNIDAD. NIHILISMO Y HERMENEUTICA EN LA CULTURA POSMODERNA. VATTIMO GIANNI</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Norberto-Bobbio.pdf" data-title="el filosofo y la politica. bobbio norberto" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL FILOSOFO Y LA POLITICA. BOBBIO NORBERTO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="AGAMBEN%20Giorgio%20-%20Gusto.pdf" data-title="el gusto. agamben giorgio" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL GUSTO. AGAMBEN GIORGIO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="El hombre mediocre.pdf" data-title="el hombre mediocre. jose ingenieros" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL HOMBRE MEDIOCRE. JOSE INGENIEROS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Albert Camus El hombre rebelde.pdf" data-title="el hombre rebelde. camus albert" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL HOMBRE REBELDE. CAMUS ALBERT</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="EL_INMORTAL_DE_JORGE_LUIS_BORGES_EL_YO_ALEPH_ABSOL.pdf" data-title="el inmortal de jorge luis borges: el yo, aleph absolutos y vocabularios finales. jorge r. sagastume" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL INMORTAL DE JORGE LUIS BORGES: EL YO, ALEPH ABSOLUTOS Y VOCABULARIOS FINALES. JORGE R. SAGASTUME</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Jean%20Luc%20Nancy%20-%20El%20intruso.pdf" data-title="el intruso. luc nancy jean" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL INTRUSO. LUC NANCY JEAN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Derrida, JacquesEl lenguaje y las instituciones filosoficas.pdf" data-title="el lenguaje y las instituciones filosoficas. derrida jacques." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL LENGUAJE Y LAS INSTITUCIONES FILOSOFICAS. DERRIDA JACQUES.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="El%20Maestro%20Ignorante.pdf" data-title="el maestro ignorante. ranciere jacques" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL MAESTRO IGNORANTE. RANCIERE JACQUES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="el_mito_de_sisifo.pdf" data-title="el mito de sisifo. camus albert" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL MITO DE SISIFO. CAMUS ALBERT</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="235_Descartes-Rene-El-Mundo-O-El-Tratado-de-La-Luz-Edicion-Bilingue_0.pdf" data-title="el mundo tratado de la luz, descartes rene." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL MUNDO TRATADO DE LA LUZ, DESCARTES RENE.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="El-nihilismo-en-la-metafisica-de-Nietzsche.pdf" data-title="el nihilismo en la metafisica de nietzsche. jorge martinez silva." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL NIHILISMO EN LA METAFISICA DE NIETZSCHE. JORGE MARTINEZ SILVA.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialnet-ElOrdenDeLecturaDeLosDialogosDePlaton-7292600.pdf" data-title="el orden de lectura de los dialogos de platon. altman willian." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL ORDEN DE LECTURA DE LOS DIALOGOS DE PLATON. ALTMAN WILLIAN.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Foucault_Michel_El_orden_del_discurso_2005.pdf" data-title="el orden dl discurso. foulcaut michel" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL ORDEN DL DISCURSO. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="El%20otro.pdf" data-title="el otro . borges jorge l." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL OTRO . BORGES JORGE L.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Michel_Foucault_El_poder_una_bestia_magn.pdf" data-title="el poder, una bestia magnifica. foulcaut michel" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL PODER, UNA BESTIA MAGNIFICA. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Maquiavelo-Principe.pdf" data-title="el principe. maquiavelo nicolas" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL PRINCIPE. MAQUIAVELO NICOLAS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="El%20problema%20de%20Spinoza.pdf" data-title="el problema de spinoza. yalom irvin d" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL PROBLEMA DE SPINOZA. YALOM IRVIN D</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="El_Reino_y_la_Gloria.pdf" data-title="el reino y la gloria. agamben giorgio" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL REINO Y LA GLORIA. AGAMBEN GIORGIO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Simone%20de%20Beauvoir%20-%20El%20segundo%20sexo.pdf" data-title="el segundo sexo. de beauvoir, simone" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL SEGUNDO SEXO. DE BEAUVOIR, SIMONE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="sartre-jean-paul-el-ser-y-la-nada.pdf" data-title="el ser y la nada. sartre jean p." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL SER Y LA NADA. SARTRE JEAN P.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Foucault-El_sujeto_y_el_poder.pdf" data-title="el sujeto y el poder. foucault michel." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL SUJETO Y EL PODER. FOUCAULT MICHEL.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="218%20-%20Tratado%20sobre%20el%20gobierno%20civil%20%20-%20John%20Locke.pdf" data-title="el tratado sobre el gobierno civil de john locke. una refutacion del asolutismo. robert filmer. guerrero s. doris emilia." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EL TRATADO SOBRE EL GOBIERNO CIVIL DE JOHN LOCKE. UNA REFUTACION DEL ASOLUTISMO. ROBERT FILMER. GUERRERO S. DORIS EMILIA.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="En%20Medio%20de%20Spinoza.%20Gilles%20Deleuze.pdf" data-title="en medio de spinoza. deluze gilles." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EN MEDIO DE SPINOZA. DELUZE GILLES.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="En medio de Spinozacuerpoalma.pdf" data-title="en medio de spinoza. cuerpo, afecciones etica. fuente : en medio de spinoza de gilles deluze." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EN MEDIO DE SPINOZA. CUERPO, AFECCIONES ETICA. FUENTE : EN MEDIO DE SPINOZA DE GILLES DELUZE.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="181585_compressed.pdf" data-title="ensayo sobre el principio de la poblacion. malthus thomas" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ENSAYO SOBRE EL PRINCIPIO DE LA POBLACION. MALTHUS THOMAS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="lockeensayogobierno.pdf" data-title="ensayo sobre el gobierno civil. locke john" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ENSAYO SOBRE EL GOBIERNO CIVIL. LOCKE JOHN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Arendt es la libertad.pdf" data-title="entre el pasado y el futuro. ocho ejercicios sobre la reflexion politica. arendt hannah." data-letter="E">
+      <div class="letter">E</div>
+      <h2>ENTRE EL PASADO Y EL FUTURO. OCHO EJERCICIOS SOBRE LA REFLEXION POLITICA. ARENDT HANNAH.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Epicuro%20-%20Carta%20a%20Meneceno.pdf" data-title="epicuro: carta a meneceo. noticia, traduccion y notas de oyarzun pablo r." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EPICURO: CARTA A MENECEO. NOTICIA, TRADUCCION Y NOTAS DE OYARZUN PABLO R.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="arc_9851.pdf" data-title="escatologia biblica. rodriguez cadena y ferrer gabrie aque" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ESCATOLOGIA BIBLICA. RODRIGUEZ CADENA Y FERRER GABRIE AQUE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="e3dddb721c3084334fc71c8da3be6d196aae.pdf" data-title="espectros de marx. el estado de la deuda, el trabajo del duelo y la nueva internacional jaques derrida y juan felipe moreno –" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ESPECTROS DE MARX. EL ESTADO DE LA DEUDA, EL TRABAJO DEL DUELO Y LA NUEVA INTERNACIONAL JAQUES DERRIDA Y JUAN FELIPE MORENO –</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Estado_de_crisis_Zygmunt_Bauman.pdf" data-title="estado de crisis. baunman zigmunt" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ESTADO DE CRISIS. BAUNMAN ZIGMUNT</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Agamben%20Giorgio%20-%20Estado%20de%20excepción%20-%20Adriana%20Hidalgo.pdf" data-title="estado de excepcion. homo sacer ii. agamben giorgio" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ESTADO DE EXCEPCION. HOMO SACER II. AGAMBEN GIORGIO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Foucault_Michel_Estetica_Etica_Y_Hermene.pdf" data-title="estetica, etica y hermeneutica. foulcaut michel" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ESTETICA, ETICA Y HERMENEUTICA. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Etica-a-Nicomaco-Aristoteles-PDF.pdf" data-title="etica a nicomaco. aristoteles." data-letter="E">
+      <div class="letter">E</div>
+      <h2>ETICA A NICOMACO. ARISTOTELES.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Spinoza%20-%20Etica.pdf" data-title="etica demostrada segun el orden geometrico. spinoza baruch" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ETICA DEMOSTRADA SEGUN EL ORDEN GEOMETRICO. SPINOZA BARUCH</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Aristeticacopia.pdf" data-title="etica nicomaquea etica eudemia. socrates." data-letter="E">
+      <div class="letter">E</div>
+      <h2>ETICA NICOMAQUEA ETICA EUDEMIA. SOCRATES.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="6696fbb7aafaa588f20ef3a1193d11b8.pdf" data-title="existe la filosofia argentina. la biblioteca revista fundada por paul groussac. secretaria de cultura g.n biblioteca nacional." data-letter="E">
+      <div class="letter">E</div>
+      <h2>EXISTE LA FILOSOFIA ARGENTINA. LA BIBLIOTECA REVISTA FUNDADA POR PAUL GROUSSAC. SECRETARIA DE CULTURA G.N BIBLIOTECA NACIONAL.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="1439-Texto del 20160226.pdf" data-title="filosofia del merito. puyol gonzalez angel" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFIA DEL MERITO. PUYOL GONZALEZ ANGEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Introduccion-a-la-Filosofia20190806-102521-a1fl44-libre.pdf" data-title="filosofia moderna garcia enrrique." data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFIA MODERNA GARCIA ENRRIQUE.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Filosofia_y_Ciencia.pdf" data-title="filosofia y ciencia. j f g h." data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFIA Y CIENCIA. J F G H.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="filoreligion.pdf" data-title="filosofia y religiones. garcia hernan" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFIA Y RELIGIONES. GARCIA HERNAN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="55%20-%20Foucault%20y%20el%20discurso%20(resumen)(1).pdf" data-title="foulcaut y el discurso (resumen). anonimo." data-letter="F">
+      <div class="letter">F</div>
+      <h2>FOULCAUT Y EL DISCURSO (RESUMEN). ANONIMO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="FilosofiA_EXCLUSIVA-libre(1).pdf" data-title="gilles deleuze. michel foucault. el continente fascinante de la filosofia moderna . márquez estrada josé w" data-letter="G">
+      <div class="letter">G</div>
+      <h2>GILLES DELEUZE. MICHEL FOUCAULT. EL CONTINENTE FASCINANTE DE LA FILOSOFIA MODERNA . MÁRQUEZ ESTRADA JOSÉ W</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="45_-_Taylor_-_Charles_y_la_sociedad_moderna_(15_copias).pdf" data-title="hegel y la sociedad moderna. charles taylor." data-letter="H">
+      <div class="letter">H</div>
+      <h2>HEGEL Y LA SOCIEDAD MODERNA. CHARLES TAYLOR.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Historia_Filo_Sofia_modernidad_a_la_posm.pdf" data-title="historia de la filosofia del renacimiento a la posmodernidad. hottis gilbert." data-letter="H">
+      <div class="letter">H</div>
+      <h2>HISTORIA DE LA FILOSOFIA DEL RENACIMIENTO A LA POSMODERNIDAD. HOTTIS GILBERT.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="1. Pablo Da Silveira.pdf" data-title="historias de filosofos. da silveira pablo" data-letter="H">
+      <div class="letter">H</div>
+      <h2>HISTORIAS DE FILOSOFOS. DA SILVEIRA PABLO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="agamben-giorgio-homo-sacer-vol-i.pdf" data-title="homo sacer. agamben giorgio" data-letter="H">
+      <div class="letter">H</div>
+      <h2>HOMO SACER. AGAMBEN GIORGIO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="HOMO_VIDENS.pdf" data-title="homo videm. la sociedad teledirigida. sartori giovani." data-letter="H">
+      <div class="letter">H</div>
+      <h2>HOMO VIDEM. LA SOCIEDAD TELEDIRIGIDA. SARTORI GIOVANI.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="te1-nietzsche-humano(1).pdf" data-title="humano demasiado humano. nietzsche federico" data-letter="H">
+      <div class="letter">H</div>
+      <h2>HUMANO DEMASIADO HUMANO. NIETZSCHE FEDERICO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Bobbio%20-%20Igualdad%20y%20libertad.pdf" data-title="igualdad y libertad. bobbio norberto." data-letter="I">
+      <div class="letter">I</div>
+      <h2>IGUALDAD Y LIBERTAD. BOBBIO NORBERTO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="vattimo-introduccioacuten-a-nietzsche.pdf" data-title="introduccion a nietzsche. vattimo gianni" data-letter="I">
+      <div class="letter">I</div>
+      <h2>INTRODUCCION A NIETZSCHE. VATTIMO GIANNI</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Investigaciones-filosoficas%20wettgenstein.pdf" data-title="investigaciones filosoficas. wittgestein ludwig" data-letter="I">
+      <div class="letter">I</div>
+      <h2>INVESTIGACIONES FILOSOFICAS. WITTGESTEIN LUDWIG</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialnet-JacquesDerridaLoIntraducible-5278436.pdf" data-title="jacques derrida. lo intraducible. siscar marcos." data-letter="J">
+      <div class="letter">J</div>
+      <h2>JACQUES DERRIDA. LO INTRADUCIBLE. SISCAR MARCOS.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="269-Texto del art.pdf" data-title="justicia, redistribucion y reconocimiento: breve analisis conceptual desde rawls y fraser. puelles araya nicolas." data-letter="J">
+      <div class="letter">J</div>
+      <h2>JUSTICIA, REDISTRIBUCION Y RECONOCIMIENTO: BREVE ANALISIS CONCEPTUAL DESDE RAWLS Y FRASER. PUELLES ARAYA NICOLAS.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="john_locke_carta_sobre_la_tolerancia.pdf" data-title="la carta sobre la tolerancia. locke john" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA CARTA SOBRE LA TOLERANCIA. LOCKE JOHN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="La_comunidad_desobrada_Jean_Luc_Nancy.pdf" data-title="la comunidad desobrada. luc nancy jean" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA COMUNIDAD DESOBRADA. LUC NANCY JEAN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="7426-Texto del art.pdf" data-title="la concepcion nietzscheana de la justicia en la genealogia de la moral confrontada desde rawls y habermas. villalobos alpizar ivan." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA CONCEPCION NIETZSCHEANA DE LA JUSTICIA EN LA GENEALOGIA DE LA MORAL CONFRONTADA DESDE RAWLS Y HABERMAS. VILLALOBOS ALPIZAR IVAN.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="la-condicion-humana-hannah-arendt.pdf" data-title="la condicion humana. arendt hannah" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA CONDICION HUMANA. ARENDT HANNAH</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="CONDICION-POSMODERNA.pdf" data-title="la condicion posmoderna. lyotard jean f" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA CONDICION POSMODERNA. LYOTARD JEAN F</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Derrida%20la%20Decostruccion.pdf" data-title="la deconstruccion como movimiento de transformación. ayala aragón, oscar ranulfo." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA DECONSTRUCCION COMO MOVIMIENTO DE TRANSFORMACIÓN. AYALA ARAGÓN, OSCAR RANULFO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="DerridalaDecost- copia.pdf" data-title="la deconstruccion de jacques derrida. krieger peter." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA DECONSTRUCCION DE JACQUES DERRIDA. KRIEGER PETER.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="v26n84a9.pdf" data-title="la decontruccion derrida jacques" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA DECONTRUCCION DERRIDA JACQUES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="alexis de tocqueville.pdf" data-title="la democracia en america. de tocqueville alexis" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA DEMOCRACIA EN AMERICA. DE TOCQUEVILLE ALEXIS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="LFLACSO-14-Feinmann.pdf" data-title="la desesperanza como creacion politica" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA DESESPERANZA COMO CREACION POLITICA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Foucault cuidado.pdf" data-title="la etica del cuidado de si como practica de la libertad. foulcaut michel" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA ETICA DEL CUIDADO DE SI COMO PRACTICA DE LA LIBERTAD. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="La_etica_protestante_y_el_espiritu_del_capitalismo-Max_Weber.pdf" data-title="la etica protestante y el espiritu del capitalismo. webwe max" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA ETICA PROTESTANTE Y EL ESPIRITU DEL CAPITALISMO. WEBWE MAX</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Husserlla filosofia como ciencia.pdf" data-title="la filosofia como ciencia estricta. husserl, edmund." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA FILOSOFIA COMO CIENCIA ESTRICTA. HUSSERL, EDMUND.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialnet-LaFilosofiaLiberalDeDavidHume-1704386.pdf" data-title="la filosofia liberal de david hume. negro dalmacio" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA FILOSOFIA LIBERAL DE DAVID HUME. NEGRO DALMACIO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="feinmann-la-filosofia-y-el-barro-de-la-historia.pdf" data-title="la filosofia y el barro de la historia - feinmann jose pablo" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA FILOSOFIA Y EL BARRO DE LA HISTORIA - FEINMANN JOSE PABLO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="3. Butler Judith - La fuerza de la no violencia..pdf" data-title="la fuerza de la no violencia. la etica en lo politico. butler judith." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA FUERZA DE LA NO VIOLENCIA. LA ETICA EN LO POLITICO. BUTLER JUDITH.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Dialnet-LaFuerzaDeLaNoViolenciaLaEticaEnLoPolitico-8724166.pdf" data-title="la fuerza de la no violencia: la etica en lo politico. butler judith." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA FUERZA DE LA NO VIOLENCIA: LA ETICA EN LO POLITICO. BUTLER JUDITH.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="49_focault.pdf" data-title="la inquietud por la verdad. foucault michel." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA INQUIETUD POR LA VERDAD. FOUCAULT MICHEL.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="4.%20Levinas%20Emmanuel%20-%20La%20huella%20del%20otro.pdf" data-title="la huella del otro. levinas emmanuel" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA HUELLA DEL OTRO. LEVINAS EMMANUEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="simondon-La-individuacion-a-la-luz-de-las-nociones-de-forma-e-informacion.pdf" data-title="la individuacion. simondon gilbert" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA INDIVIDUACION. SIMONDON GILBERT</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="dokumen.pub_la-ira-y-el-perdon-resentimiento-generosidad-justicia-filosofia-spanish-edition-9786071661418.pdf" data-title="la ira y el perdon. marta nussbahunn" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA IRA Y EL PERDON. MARTA NUSSBAHUNN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="la-muerte-de-dios.pdf" data-title="la muerte de dios. mugica carlos" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA MUERTE DE DIOS. MUGICA CARLOS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="fernandez.pdf" data-title="la mujer de la ilucion. pacto y contratos entre hombres y mujeres. fernandez ana maria." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA MUJER DE LA ILUCION. PACTO Y CONTRATOS ENTRE HOMBRES Y MUJERES. FERNANDEZ ANA MARIA.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="la-orestiada1.pdf" data-title="la orestiada. esquilo" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA ORESTIADA. ESQUILO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Sara Ahmed.pdf" data-title="la politica cultural de las emociones. ahmed sara" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA POLITICA CULTURAL DE LAS EMOCIONES. AHMED SARA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="21-3_GUTIERREZ%20MARTINEZ_La%20posmodernidad%20de%20Lyotard%20explicada%20a%20los%20posmodernos%20-%20copia.pdf" data-title="la posmodernidad de lyotard explicada a los posmodernos. daniel gutierrez martinez." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA POSMODERNIDAD DE LYOTARD EXPLICADA A LOS POSMODERNOS. DANIEL GUTIERREZ MARTINEZ.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="la_potencia_del_pensamiento_de_giorgio_agamben.pdf" data-title="la potencia del pensamiento. agamben giorgio" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA POTENCIA DEL PENSAMIENTO. AGAMBEN GIORGIO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Arendt_LaPromesaDeLaPolitica.pdf" data-title="la promesa de la politica. arendt hannah." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA PROMESA DE LA POLITICA. ARENDT HANNAH.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Ortega_y_Gasset_Jose_La_rebelion_de_las_masas.pdf" data-title="la rebelion de las masas. ortega y gasset, jose." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA REBELION DE LAS MASAS. ORTEGA Y GASSET, JOSE.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="La_riqueza_de_las_naciones-Adam_Smith.pdf" data-title="la riqueza de las naciones. smith adam" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA RIQUEZA DE LAS NACIONES. SMITH ADAM</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="vattimo-la_sociedad_transparente%20(1).pdf" data-title="la sociedad transparente vattimo gianni" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA SOCIEDAD TRANSPARENTE VATTIMO GIANNI</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="276-278.pdf" data-title="la sombra de heidegger. feinmann jose p." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA SOMBRA DE HEIDEGGER. FEINMANN JOSE P.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="rechava2,+Gestor_a+de+la+revista,+Derecho+penal+1.pdf" data-title="la teoria de la pena en el pensamiento de francesco carrara. mantovani fernando" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA TEORIA DE LA PENA EN EL PENSAMIENTO DE FRANCESCO CARRARA. MANTOVANI FERNANDO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="la-terapia-del-deseo-martha-nussbaumpdf_compress.pdf" data-title="la terapia del deseo. nussbaun martha" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA TERAPIA DEL DESEO. NUSSBAUN MARTHA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Foucault-La%20verdad%20y%20las%20formas%20juridicas.pdf" data-title="la verdad y las formas juridicas. foulcaut michel" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA VERDAD Y LAS FORMAS JURIDICAS. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="hirschman-albert-1977-las-pasiones-y-los-intereses-fce-me769xico-1978pdf_compress.pdf" data-title="las pasiones y los intereses. hirschman alberto." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LAS PASIONES Y LOS INTERESES. HIRSCHMAN ALBERTO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="historia_de_hegel.pdf" data-title="lecciones sobre la filosofia de la historia universal introduccion general. hegel g w f." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LECCIONES SOBRE LA FILOSOFIA DE LA HISTORIA UNIVERSAL INTRODUCCION GENERAL. HEGEL G W F.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Hegel_Lecciones_Sobre_La_Historia_de_la.pdf" data-title="lecciones sobre la filosofia de la historia universal tomo i. hegel g w f." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LECCIONES SOBRE LA FILOSOFIA DE LA HISTORIA UNIVERSAL TOMO I. HEGEL G W F.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Hegel, Lecciones sobre la historia de la filo II.pdf" data-title="lecciones sobre la filosofia de la historia universal tomo ii. hegel g w f." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LECCIONES SOBRE LA FILOSOFIA DE LA HISTORIA UNIVERSAL TOMO II. HEGEL G W F.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Hobbes_Thomas_Leviatan.pdf" data-title="leviatan. hobbes thomas" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LEVIATAN. HOBBES THOMAS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Losconceptos.pdf" data-title="los conceptos fundamentales de la metafisica. mundo, finitud, soledad. heidegger martin." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LOS CONCEPTOS FUNDAMENTALES DE LA METAFISICA. MUNDO, FINITUD, SOLEDAD. HEIDEGGER MARTIN.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="fanon-frantz-los_condenados_de_la_tierra.pdf" data-title="los condenados de la tierra. frantz fanon" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LOS CONDENADOS DE LA TIERRA. FRANTZ FANON</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="3baranzelli.pdf" data-title="los dialogos sobre la religion natural de hume. baranzelli dante" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LOS DIALOGOS SOBRE LA RELIGION NATURAL DE HUME. BARANZELLI DANTE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Los_retos_de_la_educacion_en_la_modernid.pdf" data-title="los retos de l educacion en la modernidad. baunman zigmunt" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LOS RETOS DE L EDUCACION EN LA MODERNIDAD. BAUNMAN ZIGMUNT</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="V6%204%20%20llovera%20en%20Friburgo.pdf" data-title="manana llovera en frivurgo. la sombra de heidegger. feinmann jose pablo" data-letter="M">
+      <div class="letter">M</div>
+      <h2>MANANA LLOVERA EN FRIVURGO. LA SOMBRA DE HEIDEGGER. FEINMANN JOSE PABLO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="manifiesto%20comunista.pdf" data-title="manifiesto del partido comunista. marx, c y federico engels" data-letter="M">
+      <div class="letter">M</div>
+      <h2>MANIFIESTO DEL PARTIDO COMUNISTA. MARX, C y FEDERICO ENGELS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Merito y Meritocracia - Rodolfo.pdf" data-title="merito y meritocracia. estevez rodolfo." data-letter="M">
+      <div class="letter">M</div>
+      <h2>MERITO Y MERITOCRACIA. ESTEVEZ RODOLFO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Metafisica%20Aristoteles.pdf" data-title="metafisica. aristoteles" data-letter="M">
+      <div class="letter">M</div>
+      <h2>METAFISICA. ARISTOTELES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="modernidad-liquida-bauman.pdf" data-title="modernidad liquida. baunman zigmunt." data-letter="M">
+      <div class="letter">M</div>
+      <h2>MODERNIDAD LIQUIDA. BAUNMAN ZIGMUNT.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="J-Aleman-Neoliberalismo-y-subjetividad.pdf" data-title="neoliberalismo y subjetividad. aleman jorge." data-letter="N">
+      <div class="letter">N</div>
+      <h2>NEOLIBERALISMO Y SUBJETIVIDAD. ALEMAN JORGE.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Neoliberalismo.pdf" data-title="neoliberalismo: aproximaciones a las razones de su exito. piñero maria t y jorge foa torres" data-letter="N">
+      <div class="letter">N</div>
+      <h2>NEOLIBERALISMO: APROXIMACIONES A LAS RAZONES DE SU EXITO. PIÑERO MARIA T Y JORGE FOA TORRES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Nietzsche_Freud_Marx.pdf" data-title="nietzsche, freud marx. foulcaut michel" data-letter="N">
+      <div class="letter">N</div>
+      <h2>NIETZSCHE, FREUD MARX. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="NOTAS_ANTIFILOSOFICAS.pdf" data-title="notas antifilosoficas. aleman jorge" data-letter="N">
+      <div class="letter">N</div>
+      <h2>NOTAS ANTIFILOSOFICAS. ALEMAN JORGE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="BorgesObrasCompletasI.pdf" data-title="obras completas i. borges jose l" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS I. BORGES JOSE L</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="BorgesObrasCompletasII.pdf" data-title="obras completas ii. borges jose l" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS II. BORGES JOSE L</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Kusch,%20Rodolfo%20-%20Obras%20Completas%20Tomo%20I.pdf" data-title="obras completas tomo i. kusch rodolfo" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO I. KUSCH RODOLFO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Kusch,%20Rodolfo%20-%20Obras%20Completas%20Tomo%20II_compressed.pdf" data-title="obras completas tomo ii. kusch rodolfo" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO II. KUSCH RODOLFO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Kusch-Rodolfo-Obras-Completas-Tomo-III.pdf" data-title="obras completas tomo iii. kusch rodolfo" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO III. KUSCH RODOLFO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Kusch-Rodolfo-Obras-Completas-Tomo-IV_compressed.pdf" data-title="obras completas tomo iv. kusch rodolfo" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO IV. KUSCH RODOLFO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-1-espanhol_compressed.pdf" data-title="obras completas tomo 1. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 1. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-2-espanhol_compressed.pdf" data-title="obras completas tomo 2. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 2. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-3-espanhol_compressed.pdf" data-title="obras completas tomo 3. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 3. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-4-espanhol_compressed.pdf" data-title="obras completas tomo 4. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 4. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-5-espanhol_compressed.pdf" data-title="obras completas tomo 5. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 5. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-6-espanhol_compressed.pdf" data-title="obras completas tomo 6. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 6. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-7-espanhol_compressed.pdf" data-title="obras completas tomo 7. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 7. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-8-espanhol_compressed.pdf" data-title="obras completas tomo 8. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 8. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="obras-completas-de-ortega-y-gasset-tomo-9-espanhol%20(1)_compressed.pdf" data-title="obras completas tomo 9. ortega y gasset" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS TOMO 9. ORTEGA Y GASSET</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Obras%20completas%20-%20Platon.pdf" data-title="obras completas. platon" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OBRAS COMPLETAS. PLATON</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Otra%20vuelta%20de%20tuerca,%20a%20proposito%20de%20Espectros%20de%20Marx%20de%20J.%20Derrida.pdf" data-title="otra vuelta de tuerca. a proposito de espectros de marx. derrida j y alberto sucasas peon" data-letter="O">
+      <div class="letter">O</div>
+      <h2>OTRA VUELTA DE TUERCA. A PROPOSITO DE ESPECTROS DE MARX. DERRIDA J Y ALBERTO SUCASAS PEON</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Martha_C_Nussbaum_Parte%20I.pdf" data-title="paisajes del pensamiento, parte i. nussbaum marta." data-letter="P">
+      <div class="letter">P</div>
+      <h2>PAISAJES DEL PENSAMIENTO, PARTE I. NUSSBAUM MARTA.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Martha_C_Nussbaum_parte II.pdf" data-title="paisajes del pensamiento, parte ii. nussbaum marta." data-letter="P">
+      <div class="letter">P</div>
+      <h2>PAISAJES DEL PENSAMIENTO, PARTE II. NUSSBAUM MARTA.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="62_-_Para_la_critica_de_la_filosofia_del_derecho_de_Hegel_-_Introduccion_(10_copias).pdf" data-title="para la critica de la “filosofia del derecho” de hegel mendoza de montero angelica." data-letter="P">
+      <div class="letter">P</div>
+      <h2>PARA LA CRITICA DE LA “FILOSOFIA DEL DERECHO” DE HEGEL MENDOZA DE MONTERO ANGELICA.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Parmenides%20Platon.pdf" data-title="parmenides. platon" data-letter="P">
+      <div class="letter">P</div>
+      <h2>PARMENIDES. PLATON</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Pensar_en_la_Posmodernidad._Nihilismo_y.pdf" data-title="pensar en la posmodernidad. nihilismo y hermeneutica.vattimo gianni" data-letter="P">
+      <div class="letter">P</div>
+      <h2>PENSAR EN LA POSMODERNIDAD. NIHILISMO Y HERMENEUTICA.VATTIMO GIANNI</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Politica-Aristoteles.pdf" data-title="politica. aristoteles" data-letter="P">
+      <div class="letter">P</div>
+      <h2>POLITICA. ARISTOTELES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="vattimo-gianni-posmodernidad-una-sociedad-transparente.pdf" data-title="posmodernidad una sociedad transparente. derrida jacques" data-letter="P">
+      <div class="letter">P</div>
+      <h2>POSMODERNIDAD UNA SOCIEDAD TRANSPARENTE. DERRIDA JACQUES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Carpio,%20Adolfo%20P%20-%20Principios%20De%20Filosofia.pdf" data-title="principios de filosofia. carpio adolfo" data-letter="P">
+      <div class="letter">P</div>
+      <h2>PRINCIPIOS DE FILOSOFIA. CARPIO ADOLFO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="judithbutler.pdf" data-title="puede uno llevar una vida buena en una vida mala. butler judith." data-letter="P">
+      <div class="letter">P</div>
+      <h2>PUEDE UNO LLEVAR UNA VIDA BUENA EN UNA VIDA MALA. BUTLER JUDITH.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="93_-_Martin_Heidegger_-_Que_es_eso_de_la_filosofia_(35_copias)%20-%20copia.pdf" data-title="que es eso de filosofia. heidegger martin." data-letter="Q">
+      <div class="letter">Q</div>
+      <h2>QUE ES ESO DE FILOSOFIA. HEIDEGGER MARTIN.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="que769_es_la_filosofia__fragmento.pdf" data-title="que es la filosofia. agamben giorgio." data-letter="Q">
+      <div class="letter">Q</div>
+      <h2>QUE ES LA FILOSOFIA. AGAMBEN GIORGIO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="93-Hegel-Filosofia-del-derecho%20(biblioteca%20nueva,%20396%20pags).pdf" data-title="rasgos fundamentales de la filosofia del derecho o compendio del derecho natural y ciencia del estado. hegel georg w f." data-letter="R">
+      <div class="letter">R</div>
+      <h2>RASGOS FUNDAMENTALES DE LA FILOSOFIA DEL DERECHO O COMPENDIO DEL DERECHO NATURAL Y CIENCIA DEL ESTADO. HEGEL GEORG W F.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Responsabilidad_y_juicio.pdf" data-title="responsabilidad y juicio. arendt hannah" data-letter="R">
+      <div class="letter">R</div>
+      <h2>RESPONSABILIDAD Y JUICIO. ARENDT HANNAH</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Lacan seminarioscompletos_compressed.pdf" data-title="seminarios completos. lacan jacques" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SEMINARIOS COMPLETOS. LACAN JACQUES</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Heidegger%20-%20Ser%20y%20tiempo.pdf" data-title="ser y tiempo. heidegger m." data-letter="S">
+      <div class="letter">S</div>
+      <h2>SER Y TIEMPO. HEIDEGGER M.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="libro-stuart-mill-john-sobre-la-libertad.pdf" data-title="sobre la libertad. stuart mill, jhon" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SOBRE LA LIBERTAD. STUART MILL, JHON</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="verdadymentira.pdf" data-title="sobre verdad y mentira en sentido extramoral friedrich nietzsche" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SOBRE VERDAD Y MENTIRA EN SENTIDO EXTRAMORAL FRIEDRICH NIETZSCHE</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="bobbioestadofilosofiamodernacomp.pdf" data-title="sociedad y estado en la filosofia moderna. bobbio norberto" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SOCIEDAD Y ESTADO EN LA FILOSOFIA MODERNA. BOBBIO NORBERTO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Socrates_y_la_tragedia-Friedrich_Nietzsche.pdf" data-title="socrates y la tragedia. nietzsche friedrich" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SOCRATES Y LA TRAGEDIA. NIETZSCHE FRIEDRICH</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Spinoza%20disidente%20tatian.pdf" data-title="spinoza disidente. diego tatian" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SPINOZA DISIDENTE. DIEGO TATIAN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="diaz65.pdf" data-title="spinoza y el cuerpo. diaz santiago" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SPINOZA Y EL CUERPO. DIAZ SANTIAGO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="teorias_evolutivas%20Salgado.pdf" data-title="teorias de la evolucion. notas desde el sur. salgado leonardo. arcucci andrea" data-letter="T">
+      <div class="letter">T</div>
+      <h2>TEORIAS DE LA EVOLUCION. NOTAS DESDE EL SUR. SALGADO LEONARDO. ARCUCCI ANDREA</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="gianni-vattimo-sobre-heidegger.pdf" data-title="textos sobre martin heidegger. vattimo gianni" data-letter="T">
+      <div class="letter">T</div>
+      <h2>TEXTOS SOBRE MARTIN HEIDEGGER. VATTIMO GIANNI</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="141-Bobbio,%20Norberto%20-%20Thomas%20Hobbes%20%20IMPRIMIR%20EN%20AHORROOO.pdf" data-title="thomas hobbes . bobbio norberto." data-letter="T">
+      <div class="letter">T</div>
+      <h2>THOMAS HOBBES . BOBBIO NORBERTO.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="286650091.pdf" data-title="thomas hobbes y el estado absoluto: del estado de razón al estado de terror. ramírez echeverri juan d." data-letter="T">
+      <div class="letter">T</div>
+      <h2>THOMAS HOBBES Y EL ESTADO ABSOLUTO: DEL ESTADO DE RAZÓN AL ESTADO DE TERROR. RAMÍREZ ECHEVERRI JUAN D.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="3.%20Ludwig%20Wittgenstein%20-%20Estudio%20introductorio%20(p.%209-126)%20Tractatus%20%20logico-philosophicus%20(141-289).pdf" data-title="tractatus logico philosophicus. wittgenstein ludwig." data-letter="T">
+      <div class="letter">T</div>
+      <h2>TRACTATUS LOGICO PHILOSOPHICUS. WITTGENSTEIN LUDWIG.</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="SPINOZA_Tratado_politico_Traduccion_Intr_compressed.pdf" data-title="tratado politico. spinoza baruch" data-letter="T">
+      <div class="letter">T</div>
+      <h2>TRATADO POLITICO. SPINOZA BARUCH</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="tratado-teolc3b3gico-polc3adtco_compressed.pdf" data-title="tratado teologico politico. spinoza. baruch" data-letter="T">
+      <div class="letter">T</div>
+      <h2>TRATADO TEOLOGICO POLITICO. SPINOZA. BARUCH</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Hume_tratado.pdf" data-title="tratado sobre la naturaleza humana. hume davis" data-letter="T">
+      <div class="letter">T</div>
+      <h2>TRATADO SOBRE LA NATURALEZA HUMANA. HUME DAVIS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Feinmann%20Jose%20Pablo%20-%20Ultimos%20Dias%20De%20La%20Victima.pdf" data-title="ultimos dias de la victima. feinnman jose pablo" data-letter="U">
+      <div class="letter">U</div>
+      <h2>ULTIMOS DIAS DE LA VICTIMA. FEINNMAN JOSE PABLO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Irvin David Yalom-conshopenhaur.pdf" data-title="un año con schopenhauer. yalom irvin d" data-letter="U">
+      <div class="letter">U</div>
+      <h2>UN AÑO CON SCHOPENHAUER. YALOM IRVIN D</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Michel_Foucault_Una_ontologia_de_la_actu.pdf" data-title="una antologia de la actualidad. foulcaut michel" data-letter="U">
+      <div class="letter">U</div>
+      <h2>UNA ANTOLOGIA DE LA ACTUALIDAD. FOULCAUT MICHEL</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Vacas,%20cerdos,%20guerras%20y%20brujas%20-%20Marvin%20Harris.pdf" data-title="vacas, cerdos, guerras y brujas. marvin harris" data-letter="V">
+      <div class="letter">V</div>
+      <h2>VACAS, CERDOS, GUERRAS Y BRUJAS. MARVIN HARRIS</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="Bauman%20Zygmunt%20-%20Vidas%20desperdiciadas%20-%20La%20modernidad%20y%20sus%20parias.pdf" data-title="vidas desperdiciadas. baunman zigmunt" data-letter="V">
+      <div class="letter">V</div>
+      <h2>VIDAS DESPERDICIADAS. BAUNMAN ZIGMUNT</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="te.1747%20(1).pdf" data-title="violencia hermeneutica y arte: una lectura debil de la filosofia de vattimo" data-letter="V">
+      <div class="letter">V</div>
+      <h2>VIOLENCIA HERMENEUTICA Y ARTE: UNA LECTURA DEBIL DE LA FILOSOFIA DE VATTIMO</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="11%20tesis%20sobre%20dos%20conversaciones.pdf" data-title="11 tesis sobre dos conversaciones.garcia hernan" data-letter="1">
+      <div class="letter">1</div>
+      <h2>11 TESIS SOBRE DOS CONVERSACIONES.GARCIA HERNAN</h2>
+      <div class="open">Abrir documento →</div>
+    </a><a class="card" href="58-indicios-sobre-el-cuerpo-extensic3b3n-del-alma%20(1).pdf" data-title="58 indicios sobre el cuerpo. extension del alma" data-letter="5">
+      <div class="letter">5</div>
+      <h2>58 INDICIOS SOBRE EL CUERPO. EXTENSION DEL ALMA</h2>
+      <div class="open">Abrir documento →</div>
+    </a></section>
+  <div id="empty" class="empty">No encontramos documentos con esa búsqueda.</div>
+</main>
+<footer>Biblioteca virtual · Filosofía</footer>
+<script>
+const search=document.getElementById('search'), cards=[...document.querySelectorAll('.card')],
+count=document.getElementById('count'), empty=document.getElementById('empty');
+let letter='*';
+function filter(){
+ const q=search.value.trim().toLowerCase();
+ let n=0;
+ cards.forEach(c=>{
+   const ok=(letter==='*'||c.dataset.letter===letter)&&(q===''||c.dataset.title.includes(q));
+   c.style.display=ok?'block':'none'; if(ok)n++;
+ });
+ count.textContent=`Mostrando ${n} documento${n===1?'':'s'}`;
+ empty.style.display=n?'none':'block';
+}
+search.addEventListener('input',filter);
+document.querySelectorAll('[data-letter-filter]').forEach(b=>b.addEventListener('click',()=>{
+ letter=b.dataset.letterFilter;
+ document.querySelectorAll('[data-letter-filter]').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active'); filter();
+}));
+</script>
+</body>
+</html>
