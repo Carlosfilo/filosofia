@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videoteca virtual — Filosofía</title>
+<meta name="description" content="Biblioteca virtual de libros, artículos y resúmenes de temas filosóficos.">
+<style>
+:root{
+  --bg:#f3f0e8; --paper:#fffdf8; --ink:#252525; --muted:#6c675d;
+  --accent:#6f5b3e; --accent2:#a78b63; --line:#ded6c8;
+  --shadow:0 10px 30px rgba(55,45,30,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+header{background:linear-gradient(135deg,#2f2b25,#625440);color:#fff;padding:54px 24px 48px;text-align:center}
+header .eyebrow{font:600 12px/1.2 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.78}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.12;margin:14px auto 12px;font-weight:500;letter-spacing:.01em}
+header p{max-width:850px;margin:0 auto;color:#eee7dc;font-size:18px}
+.wrap{max-width:1180px;margin:auto;padding:28px 20px 70px}
+.toolbar{position:sticky;top:0;z-index:10;background:rgba(243,240,232,.94);backdrop-filter:blur(8px);padding:16px 0;border-bottom:1px solid var(--line)}
+.search{width:100%;padding:14px 18px;border:1px solid #cfc5b5;border-radius:10px;background:white;font:16px Arial,sans-serif;outline:none}
+.search:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(167,139,99,.15)}
+.alphabet{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.alphabet button{border:1px solid #cfc5b5;background:#fff;border-radius:999px;padding:6px 10px;cursor:pointer;font-weight:600;color:var(--accent)}
+.alphabet button:hover,.alphabet button.active{background:var(--accent);color:#fff}
+.meta{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:24px 0 14px;color:var(--muted);font:13px Arial,sans-serif}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{display:block;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;box-shadow:0 3px 10px rgba(55,45,30,.035);transition:.18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#c5b59d}
+.card .letter{font:700 11px Arial,sans-serif;letter-spacing:.12em;color:var(--accent2);margin-bottom:7px}
+.card h2{font-size:17px;line-height:1.35;margin:0 0 9px;font-weight:600}
+.card .open{font:12px Arial,sans-serif;color:var(--accent);opacity:.85}
+.empty{text-align:center;padding:50px;color:var(--muted);display:none}
+footer{text-align:center;color:var(--muted);font:13px Arial,sans-serif;padding:30px}
+.note{background:#ebe5d9;border-left:4px solid var(--accent2);padding:15px 18px;margin:22px 0;font-size:15px}
+@media(max-width:600px){header{padding:38px 18px}header p{font-size:16px}.wrap{padding:18px 12px 50px}.grid{grid-template-columns:1fr}.card{padding:15px}.meta{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Carlosfilo · Videoteca virtual</div>
+  <h1>Videos de clases, entrevistas y conversaciones</h1>
+  <p>Un espacio para analizar y discutir las preguntas que la filosofía mantiene abiertas.</p>
+</header>
+<main class="wrap">
+  <div class="note"><strong>Videoteca virtual.</strong> Esta colección reúne material descargado de youtube con acceso y descarga gratuita, tal como se presenta en la página original.</div>
+  <section class="toolbar" aria-label="Herramientas de búsqueda">
+    <input id="search" class="search" type="search" placeholder="Buscar por título, autor o palabra clave…" aria-label="Buscar">
+    <div class="alphabet"><button type="button" class="active" data-letter-filter="*">Todos</button><button type="button" data-letter-filter="A">A</button><button type="button" data-letter-filter="C">C</button><button type="button" data-letter-filter="D">D</button><button type="button" data-letter-filter="E">E</button><button type="button" data-letter-filter="F">F</button><button type="button" data-letter-filter="G">G</button><button type="button" data-letter-filter="H">H</button><button type="button" data-letter-filter="I">I</button><button type="button" data-letter-filter="J">J</button><button type="button" data-letter-filter="L">L</button><button type="button" data-letter-filter="M">M</button><button type="button" data-letter-filter="N">N</button><button type="button" data-letter-filter="O">O</button><button type="button" data-letter-filter="P">P</button><button type="button" data-letter-filter="Q">Q</button><button type="button" data-letter-filter="R">R</button><button type="button" data-letter-filter="S">S</button><button type="button" data-letter-filter="T">T</button><button type="button" data-letter-filter="U">U</button><button type="button" data-letter-filter="V">V</button></div>
+  </section>
+  
+  <div class="meta"><span id="count">Mostrando 22 documentos</span><span>Ordenados alfabéticamente</span></div>
+  <section id="grid" class="grid">
+  </a><a class="card" href="https://www.youtube.com/watch?v=SaXetXutuJ0" data-title="ASÍ HABLO ZARATRUSTA. DOCUMENTAL" data-letter="A">
+      <div class="letter">A</div>
+      <h2>ASÍ HABLO ZARATRUSTA. DOCUMENTAL</h2>
+      <div class="open">Ver video →</div>
+	  
+  
+	  
+    
+	  
+    
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=9UGcF72tHAg&list=PLS7zo1ycVQfkBZ6LzVPpCgZqkbK3Xzshw" data-title="CLASES UNIVERSIDAD LIBRE. DARÍO SZTAJNSZRAJBER" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CLASES UNIVERSIDAD LIBRE. DARÍO SZTAJNSZRAJBER</h2>
+      <div class="open">Ver video →</div>
+	
+	</a><a class="card" href="https://www.youtube.com/watch?v=ZeRJ4pympuM" data-title="CREANDO CAPACIDADES. NUSSBAUM MARTHA" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CREANDO CAPACIDADES. NUSSBAUM MARTHA</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/watch?v=T3fNklArb6Q" data-title="CUERPOS QUE TODAVÍA IMPORTAN. BUTLER J" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CUERPOS QUE TODAVÍA IMPORTAN. BUTLER J</h2>
+      <div class="open">Ver video →</div>
+	  
+    
+	  
+    </a><a class="card" href="https://www.youtube.com/playlist?list=PL9aTN4Co7wslLspZEJ5_6ILibD5B6fRy4" data-title="CURSO SOBRE DAVID HUME. MINECAN ANA" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CURSO SOBRE DAVID HUME. MINECAN ANA</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/@guidofernandezparmo/videos" data-title="CURSOS: VIDEOS PROFESOR FERNÁNDEZ PARMO GUIDO" data-letter="C">
+      <div class="letter">C</div>
+      <h2>CURSOS: VIDEOS PROFESOR FERNÁNDEZ PARMO GUIDO</h2>
+      <div class="open">Ver video →</div>
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=1ep_OcxPYGg" data-title="ENTREVISTA:ALEJANDRO DOLINA CON DARÍO SZTAJNSZRAJBER" data-letter="E">
+      <div class="letter">E</div>
+      <h2>ENTREVISTA:ALEJANDRO DOLINA CON DARÍO SZTAJNSZRAJBER.</h2>
+      <div class="open">Ver video →</div>
+	 
+    </a><a class="card" href="https://www.youtube.com/@guidofernandezparmo" data-title="EUROCENTRISMO 1 AIMÉ CESAIRE Y EL DISCURSO SOBRE EL COLONIALISMO. FERNANDEZ PARMO GUIDO" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EUROCENTRISMO 1 AIMÉ CESAIRE Y EL DISCURSO SOBRE EL COLONIALISMO. FERNANDEZ PARMO GUIDO .</h2>
+      <div class="open">Ver video →</div>
+	  	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=TwY1CrIt6lY&t=414s" data-title="EUROCENTRISMO 2: FILOSOFÍA LATINOAMERICANA.FERNÁNDEZ PARMO GUIDO" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EUROCENTRISMO 2: FILOSOFÍA LATINOAMERICANA.FERNÁNDEZ PARMO GUIDO</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/watch?v=hri_f9vMe10" data-title="EUROCENTRISMO 3: EDWARD SAID Y EL ORIENTALISMO. Fernández Parmo GUIDO" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EUROCENTRISMO 3: EDWARD SAID Y EL ORIENTALISMO. FERNÁNDEZ PARMO GUIDO</h2>
+      <div class="open">Ver video →</div>
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=zGvHQ6Zs04w&t=967s" data-title="EUROCENTRISMO 4: ANÍBAL QUIJANO Y LA COLONIALIDAD DEL PODER. FERNÁNDEZ PARMO GUIDO" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EUROCENTRISMO 4: ANÍBAL QUIJANO Y LA COLONIALIDAD DEL PODER..FERNÁNDEZ PARMO GUIDO</h2>
+      <div class="open">Ver video →</div>
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=9vSdhMDF8Ug" data-title="EUROCENTRISMO 5: WALLERSTEIN Y LAS CIENCIAS SOCIALES. .FERNÁNDEZ PARMO GUIDO" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EUROCENTRISMO 5: WALLERSTEIN Y LAS CIENCIAS SOCIALES. FERNÁNDEZ PARMO GUIDO</h2>
+      <div class="open">Ver video →</div>
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=XNQHFmCxQ54&list=RDCMUCFQW0lVCtANfI7uX7dckh4Q&index=6" data-title="EUROCENTRISMO 6 - KANT Y LA MAYORÍA DE EDAD. FERNÁNDEZ PARMO GUIDO" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EUROCENTRISMO 6 - KANT Y LA MAYORÍA DE EDAD. FERNÁNDEZ PARMO GUIDO </h2>
+      <div class="open">Ver video→</div>
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=VrEIREut0_M&list=RDCMUCFQW0lVCtANfI7uX7dckh4Q&index=7" data-title="EUROCENTRISMO 7 - BÁRBAROS, SALVAJES, PRIMITIVOS.FERNÁNDEZ PARMO GUIDO" data-letter="E">
+      <div class="letter">E</div>
+      <h2>EUROCENTRISMO 7 - BÁRBAROS, SALVAJES, PRIMITIVOS.FERNÁNDEZ PARMO GUIDO</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/playlist?list=PL8ZfEptaIREfWPnlhXH2VpvgyYxR-cYEq" data-title="Filosofía aquí y ahora. TEMPORADAS 1 a 5. Feinmann José P" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFÍA AQUÍ Y AHORA. temporadas 1 A 5. FEINMANN JOSÉ P</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/playlist?list=PLLyLbC_ogAAnzuSq9qe_LQvH7kFhIeyiq" data-title="Filosofía aquí y ahora. TEMPORADAS 6. Feinmann José P" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFÍA AQUÍ Y AHORA. temporadas 6. FEINMANN JOSÉ P</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/playlist?list=PLRbsNUBMA4D3VVW2c3WkV6dJcbZUbtWM6" data-title="Filosofía aquí y ahora. TEMPORADAS 7. Feinmann José P" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFÍA AQUÍ Y AHORA. temporadas 7. FEINMANN JOSÉ P</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/playlist?list=PLBTWZNasHZO--MxRhgWABcuptUR84pLOz" data-title="Filosofía aquí y ahora. TEMPORADAS 8. Feinmann José P" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFÍA AQUÍ Y AHORA. temporadas 8. FEINMANN JOSÉ P</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/playlist?list=PL-UaTZnN7ciWEYYrcQDViMrWsdS1OabWL" data-title="FILOSOFÍA- FILÓSOFOS CANAL A" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFÍA- FILÓSOFOS CANAL A</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.facultadlibre.org/filosofia-8-libros-dario-sztajnszrajber" data-title="FILOSOFÍA EN 8 LIBROS. SZTAJNSZRAJBER D" data-letter="F">
+      <div class="letter">F</div>
+      <h2>FILOSOFÍA EN 8 LIBROS. SZTAJNSZRAJBER D</h2>
+      <div class="open">Ver video→</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/watch?v=RHJH35jPJ3w" data-title="HEIDEGGER |. POR DARÍO SZTAJNSZRAJBER." data-letter="H">
+      <div class="letter">H</div>
+      <h2>HEIDEGGER |. POR DARÍO SZTAJNSZRAJBER.</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/watch?v=gJ5UQKDeNLM&list=PLGDZQYren6SUOm-enfe5KgRmgpyxi8vFE&index=1" data-title="HISTORIA DE LA FILOSOFÍA. UNIVERSIDAD LIBRE. POR ABRAHAM TÓMAS." data-letter="H">
+      <div class="letter">H</div>
+      <h2>HISTORIA DE LA FILOSOFÍA. UNIVERSIDAD LIBRE</h2>
+      <div class="open">Ver video →</div> 
+	  
+	  </a><a class="card" href="https://www.youtube.com/watch?v=UXDXLYANF5E" data-title="La cuestión de la ideología. Aleman J" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA CUESTIÓN DE LA IDEOLOGÍA. ALEMAN J</h2>
+      <div class="open">Abrir documento →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/watch?v=EpoiGzmm8RA" data-title="LA IRA Y SU CONTRARIO. NUSSBAUM MARTHA" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LA IRA Y SU CONTRARIO. NUSSBAUM MARTHA</h2>
+      <div class="open">Ver video →</div>
+		  
+    </a><a class="card" href="https://www.youtube.com/watch?v=pd48SfUMy1U&list=PLdg7I4L3LiDVSACywEQpTp844ck4KrBCm" data-title="LOS MAESTROS DEL PENSAMIENTO. ABRAHAM TÓMAS." data-letter="L">
+      <div class="letter">L</div>
+      <h2>LOS MAESTROS DEL PENSAMIENTO. ABRAHAM TÓMAS.</h2>
+      <div class="open">Ver video →</div>
+    
+    </a><a class="card" href="https://www.youtube.com/watch?app=desktop&v=dPT74lDz3dg" data-title="LOS DESAFÍOS DE LA DEMOCRACIA EN EL SIGLO XXI. CALDERON F" data-letter="L">
+      <div class="letter">L</div>
+      <h2>LOS DESAFÍOS DE LA DEMOCRACIA EN EL SIGLO XXI. CALDERON F</h2>
+      <div class="open">Ver video →</div>
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=DSAknDejkTY&list=PLJtilfDswj1fZ44cbYulhrfevyb4n0f4Q" data-title="PERSPECTIVAS Y TRADICIONES DE LA FILOSOFÍA POLÍTICA. ROSLER ANDRÉS" data-letter="P">
+      <div class="letter">P</div>
+      <h2>PERSPECTIVAS Y TRADICIONES DE LA FILOSOFÍA POLÍTICA. ROSLER ANDRÉS</h2>
+      <div class="open">Ver video →</div>
+	  
+    </A><a class="card" href="https://www.youtube.com/watch?v=KHLfR1wHeNY" data-title="Presentación libro Idiologias. Aleman J" data-letter="P">
+      <div class="letter">P</div>
+      <h2>PRESENTACIÓN LIBRO IDIOLOGIAS. ALEMAN J </h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="https://www.youtube.com/watch?v=wOjHYzRuNBU" data-title="SPINOZA POR DIEGO TATIAN" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SPINOZA POR DIEGO TATIAN</h2>
+      <div class="open">Ver video →</div>
+	  
+    </a><a class="card" href="https://www.youtube.com/watch?v=AlQof12AGz0&pp=ygUbdW5pdmVyc2lkYWQgbGlicmUgZmlsb3NvZmlh" data-title="SUBJETIVIDAD Y PODER. ESTHER DIAZ" data-letter="S">
+      <div class="letter">S</div>
+      <h2>SUBJETIVIDAD Y PODER. ESTHER DIAZ.</h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="" data-title="" data-letter="D">
+      <div class="letter">D</div>
+      <h2></h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="" data-title="" data-letter="D">
+      <div class="letter">D</div>
+      <h2></h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="" data-title="" data-letter="D">
+      <div class="letter">D</div>
+      <h2></h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="" data-title="" data-letter="D">
+      <div class="letter">D</div>
+      <h2></h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="" data-title="" data-letter="D">
+      <div class="letter">D</div>
+      <h2></h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="" data-title="" data-letter="D">
+      <div class="letter">D</div>
+      <h2></h2>
+      <div class="open">Ver video →</div>
+	  
+	  </a><a class="card" href="" data-title="" data-letter="D">
+      <div class="letter">D</div>
+      <h2></h2>
+      <div class="open">Ver video →</div>
+	 </a></section>
+  <div id="empty" class="empty">No encontramos documentos con esa búsqueda.</div>
+</main>
+<footer>Biblioteca virtual · Filosofía</footer>
+<script>
+const search=document.getElementById('search'), cards=[...document.querySelectorAll('.card')],
+count=document.getElementById('count'), empty=document.getElementById('empty');
+let letter='*';
+function filter(){
+ const q=search.value.trim().toLowerCase();
+ let n=0;
+ cards.forEach(c=>{
+   const ok=(letter==='*'||c.dataset.letter===letter)&&(q===''||c.dataset.title.includes(q));
+   c.style.display=ok?'block':'none'; if(ok)n++;
+ });
+ count.textContent=`Mostrando ${n} documento${n===1?'':'s'}`;
+ empty.style.display=n?'none':'block';
+}
+search.addEventListener('input',filter);
+document.querySelectorAll('[data-letter-filter]').forEach(b=>b.addEventListener('click',()=>{
+ letter=b.dataset.letterFilter;
+ document.querySelectorAll('[data-letter-filter]').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active'); filter();
+}));
+</script>
+</body>
+</html>
