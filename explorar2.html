@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorar la Filosofía | Carlosfilo</title>
+<style>
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#f5f1e8;color:#2e2b27;line-height:1.6}
+header{background:#2f2b27;color:#f7f2e8;padding:42px 20px 34px;text-align:center}
+header h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.3rem);font-weight:normal}
+header p{margin:0 auto;max-width:850px;font-size:1.08rem;font-style:italic;opacity:.9}
+nav{position:sticky;top:0;z-index:10;background:#e7dfd0;border-bottom:1px solid #c8bca8;padding:10px;text-align:center}
+nav a{display:inline-block;margin:4px 7px;padding:7px 10px;color:#2e2b27;text-decoration:none;font-weight:bold;border-radius:4px}
+nav a:hover,nav a:focus{background:#d4c7b3;text-decoration:underline}
+main{max-width:1180px;margin:auto;padding:28px 18px 60px}
+.intro{text-align:center;max-width:900px;margin:0 auto 28px}
+.intro h2{font-size:2rem;font-weight:normal;margin-bottom:8px}
+.panel{background:#fffdf8;border:1px solid #d6ccbc;border-radius:10px;padding:24px;margin:20px 0;box-shadow:0 3px 12px rgba(50,40,30,.06)}
+.filters{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+label{font-weight:bold;font-size:.95rem}
+select,input{width:100%;margin-top:6px;padding:11px 10px;border:1px solid #bdb09c;border-radius:6px;background:white;color:#2e2b27;font:inherit}
+button{margin-top:15px;padding:11px 18px;border:0;border-radius:6px;background:#403a34;color:#fff;font:inherit;font-weight:bold;cursor:pointer}
+button:hover{background:#27231f}
+.results-title{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+#count{font-size:.95rem;font-style:italic}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.card{border:1px solid #d6ccbc;border-radius:8px;padding:18px;background:#faf7f0}
+.card h3{margin:0 0 5px;font-size:1.35rem}
+.meta{font-size:.9rem;color:#6a6258;margin-bottom:10px}
+.tags{font-size:.86rem}.tag{display:inline-block;background:#e7dfd0;border-radius:12px;padding:2px 8px;margin:3px 3px 0 0}
+.index-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.index-grid a{color:#3d372f;text-decoration:none;padding:9px;border-bottom:1px solid #d6ccbc}
+.index-grid a:hover{text-decoration:underline}
+footer{text-align:center;padding:30px 15px;background:#2f2b27;color:#e9e1d5;font-size:.92rem}
+@media(max-width:900px){.filters{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:repeat(2,1fr)}.index-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){header{padding:30px 15px}nav{position:static}nav a{display:block;margin:2px 0}main{padding:18px 12px 40px}.panel{padding:17px}.filters,.cards,.index-grid{grid-template-columns:1fr}.intro h2{font-size:1.65rem}}
+
+        .leer-filosofo {
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .leer-filosofo:hover {
+            text-decoration: underline;
+        }
+        .sin-ficha {
+            display: inline-block;
+            margin-top: 12px;
+            font-style: italic;
+            opacity: .7;
+        }
+</style>
+</head>
+<body>
+<header>
+<h1>Explorar la Filosofía</h1>
+<p>Un mapa para recorrer filósofos, ideas, corrientes, siglos y preguntas.</p>
+</header>
+<nav aria-label="Navegación">
+<a href="index.html">Inicio</a><a href="#buscador">Buscar</a><a href="#filosofos">Filósofos</a><a href="#corrientes">Corrientes</a><a href="#siglos">Siglos</a><a href="#pensamiento">Pensamiento político y social</a>
+</nav>
+<main>
+<section class="intro">
+<h2>Una puerta de entrada al pensamiento</h2>
+<p>La filosofía también puede recorrerse como un mapa. Aquí puedes llegar a un autor por su nombre, por su corriente de pensamiento, por el siglo en que vivió, por sus ideas políticas y sociales o por los grandes temas que atravesaron su obra.</p>
+</section>
+<section class="panel" id="buscador">
+<h2>🔎 Buscar en la filosofía</h2>
+<div class="filters">
+<div><label for="nombre">Filósofo</label><input id="nombre" type="search" placeholder="Ej.: Sartre"></div>
+<div><label for="corriente">Corriente</label><select id="corriente"><option value="">Todas</option></select></div>
+<div><label for="siglo">Siglo</label><select id="siglo"><option value="">Todos</option></select></div>
+<div><label for="politica">Pensamiento político-social</label><select id="politica"><option value="">Todos</option></select></div>
+<div><label for="tema">Tema</label><select id="tema"><option value="">Todos</option></select></div>
+</div>
+<button type="button" onclick="mostrarTodos()">Mostrar todos</button>
+</section>
+<section class="panel" id="resultados">
+<div class="results-title"><h2>Resultados</h2><span id="count"></span></div>
+<div class="cards" id="cards"></div>
+</section>
+<section class="panel" id="filosofos"><h2>Índice alfabético de filósofos</h2><div class="index-grid" id="indice"></div></section>
+<section class="panel" id="corrientes"><h2>Corrientes de pensamiento</h2><div class="index-grid" id="listaCorrientes"></div></section>
+<section class="panel" id="siglos"><h2>Filosofía por siglos</h2><div class="index-grid" id="listaSiglos"></div></section>
+<section class="panel" id="pensamiento"><h2>Pensamiento político y social</h2><div class="index-grid" id="listaPolitica"></div></section>
+</main>
+<footer>Carlosfilo · Lecturas filosóficas para no filósofos</footer>
+
+<script>
+const filosofos=[
+{nombre:"Sócrates",siglo:"V a. C.",corriente:"Filosofía griega clásica",politica:"Ética y vida pública",temas:["ética","conocimiento","diálogo","virtud"],archivo:""},
+{nombre:"Platón",siglo:"IV a. C.",corriente:"Platonismo",politica:"Filosofía política",temas:["justicia","conocimiento","alma","Estado"],archivo:""},
+{nombre:"Aristóteles",siglo:"IV a. C.",corriente:"Aristotelismo",politica:"Filosofía política",temas:["ética","felicidad","virtud","política"],archivo:"ARISTOTELES.html"},
+{nombre:"Epicuro",siglo:"IV-III a. C.",corriente:"Epicureísmo",politica:"Ética y vida pública",temas:["felicidad","placer","amistad","muerte"],archivo:""},
+{nombre:"Agustín de Hipona",siglo:"IV-V",corriente:"Patrística",politica:"Filosofía social",temas:["Dios","tiempo","interioridad","mal"],archivo:""},
+{nombre:"Tomás de Aquino",siglo:"XIII",corriente:"Escolástica",politica:"Filosofía política",temas:["Dios","razón","fe","ley natural"],archivo:""},
+{nombre:"Maquiavelo",siglo:"XV-XVI",corriente:"Humanismo político",politica:"Realismo político",temas:["poder","Estado","política","virtù"],archivo:""},
+{nombre:"Descartes",siglo:"XVII",corriente:"Racionalismo",politica:"Filosofía moderna",temas:["duda","razón","sujeto","certeza"],archivo:""},
+{nombre:"Spinoza",siglo:"XVII",corriente:"Racionalismo",politica:"Liberalismo y libertad",temas:["Dios","naturaleza","libertad","poder"],archivo:""},
+{nombre:"David Hume",siglo:"XVIII",corriente:"Empirismo",politica:"Filosofía política",temas:["experiencia","conocimiento","moral","costumbre"],archivo:"Hume.html"},
+{nombre:"Immanuel Kant",siglo:"XVIII-XIX",corriente:"Idealismo trascendental",politica:"Republicanismo y derechos",temas:["ética","libertad","razón","dignidad"],archivo:"kant.html"},
+{nombre:"Hegel",siglo:"XIX",corriente:"Idealismo alemán",politica:"Filosofía política",temas:["historia","dialéctica","Estado","libertad"],archivo:""},
+{nombre:"Karl Marx",siglo:"XIX",corriente:"Marxismo",politica:"Marxismo y crítica del capitalismo",temas:["capitalismo","trabajo","clases","ideología"],archivo:""},
+{nombre:"Friedrich Nietzsche",siglo:"XIX",corriente:"Nihilismo / filosofía de la vida",politica:"Crítica social",temas:["Dios","nihilismo","moral","voluntad de poder"],archivo:"nietzsche.html"},
+{nombre:"Søren Kierkegaard",siglo:"XIX",corriente:"Precursor del existencialismo",politica:"Crítica social",temas:["existencia","angustia","fe","elección"],archivo:""},
+{nombre:"Martin Heidegger",siglo:"XX",corriente:"Existencialismo / fenomenología",politica:"Crítica de la modernidad",temas:["ser","tiempo","existencia","técnica"],archivo:""},
+{nombre:"Jean-Paul Sartre",siglo:"XX",corriente:"Existencialismo",politica:"Marxismo / pensamiento crítico",temas:["libertad","responsabilidad","existencia","elección"],archivo:""},
+{nombre:"Simone de Beauvoir",siglo:"XX",corriente:"Existencialismo / feminismo",politica:"Feminismo",temas:["libertad","mujer","alteridad","opresión"],archivo:""},
+{nombre:"Albert Camus",siglo:"XX",corriente:"Existencialismo / filosofía del absurdo",politica:"Humanismo y crítica social",temas:["absurdo","rebelión","libertad","solidaridad"],archivo:""},
+{nombre:"Michel Foucault",siglo:"XX",corriente:"Postestructuralismo",politica:"Crítica social",temas:["poder","disciplina","libertad","sujeto"],archivo:"foulcaut.html"},
+{nombre:"Jacques Derrida",siglo:"XX",corriente:"Deconstrucción",politica:"Crítica social",temas:["lenguaje","alteridad","justicia","deconstrucción"],archivo:"DERRIDA.html"},
+{nombre:"Gilles Deleuze",siglo:"XX",corriente:"Postestructuralismo",politica:"Crítica social",temas:["deseo","poder","diferencia","control"],archivo:"delluze.html"},
+{nombre:"Gianni Vattimo",siglo:"XX-XXI",corriente:"Pensamiento débil / hermenéutica",politica:"Filosofía política",temas:["nihilismo","religión","verdad","hermenéutica"],archivo:"vattimo.html"},
+{nombre:"Byung-Chul Han",siglo:"XX-XXI",corriente:"Filosofía contemporánea",politica:"Crítica social",temas:["sociedad","tecnología","rendimiento","dolor"],archivo:""},
+{nombre:"Martha Nussbaum",siglo:"XX-XXI",corriente:"Filosofía política contemporánea",politica:"Liberalismo / capacidades",temas:["justicia","capacidades","democracia","emociones"],archivo:""},
+{nombre:"Giorgio Agamben",siglo:"XX-XXI",corriente:"Filosofía contemporánea",politica:"Filosofía política / biopolítica",temas:["biopolítica","estado de excepción","vida desnuda","poder"],archivo:"Agamben.html"},
+{nombre:"Jorge Alemán",siglo:"XX-XXI",corriente:"Psicoanálisis y filosofía política",politica:"Filosofía política / crítica social",temas:["psicoanálisis","sujeto","política","capitalismo"],archivo:"ALEMAN.html"},
+{nombre:"Zygmunt Bauman",siglo:"XX-XXI",corriente:"Sociología / filosofía social",politica:"Crítica social",temas:["modernidad líquida","sociedad","consumo","incertidumbre"],archivo:"bauman.html"},
+{nombre:"Hannah Arendt",siglo:"XX",corriente:"Filosofía política",politica:"Republicanismo / pensamiento político",temas:["poder","acción","totalitarismo","derechos"],archivo:"ARENDT.html"},
+{nombre:"Franco Berardi",siglo:"XX-XXI",corriente:"Filosofía contemporánea / pensamiento crítico",politica:"Crítica del capitalismo y la tecnología",temas:["capitalismo","tecnología","trabajo","afectos"],archivo:"berardi.html"},
+{nombre:"Hans Jonas",siglo:"XX",corriente:"Filosofía contemporánea",politica:"Ética de la responsabilidad",temas:["responsabilidad","tecnología","ética","vida"],archivo:"HANS.html"},
+{nombre:"Norberto Bobbio",siglo:"XX",corriente:"Filosofía política",politica:"Democracia / derechos / liberalismo",temas:["democracia","derechos","Estado","política"],archivo:"bobbio.html"},
+{nombre:"Jorge Luis Borges",siglo:"XX",corriente:"Literatura y filosofía",politica:"Pensamiento literario",temas:["literatura"],archivo:"borges.html"},
+{nombre:"Judith Butler",siglo:"XX-XXI",corriente:"Filosofía contemporánea / teoría de género",politica:"Crítica social",temas:["género","poder","identidad"],archivo:"butler.html"},
+{nombre:"Esther Díaz",siglo:"XX-XXI",corriente:"Filosofía contemporánea",politica:"Crítica social",temas:["filosofía","ciencia","tecnología","sociedad"],archivo:"Diaz.html"},
+{nombre:"Enrique Dussel",siglo:"XX-XXI",corriente:"Filosofía de la liberación",politica:"Filosofía política",temas:["liberación","ética","política","modernidad"],archivo:"Dussel.html"},
+{nombre:"Félix Guattari",siglo:"XX",corriente:"Postestructuralismo",politica:"Crítica social",temas:["deseo","subjetividad","política","psicoanálisis"],archivo:"guattari.html"},
+{nombre:"Maurizio Lazzarato",siglo:"XX-XXI",corriente:"Filosofía contemporánea / pensamiento crítico",politica:"Crítica del capitalismo",temas:["capitalismo","trabajo","deuda","política"],archivo:"LAZZARATO.html"},
+{nombre:"Emmanuel Lévinas",siglo:"XX",corriente:"Filosofía contemporánea",politica:"Ética y alteridad",temas:["alteridad","ética","otro","responsabilidad"],archivo:"levinas.html"},
+{nombre:"Jean-Luc Nancy",siglo:"XX-XXI",corriente:"Filosofía contemporánea",politica:"Filosofía social",temas:["comunidad","ser","política","cuerpo"],archivo:"nancy.html"},
+{nombre:"Antonio Negri",siglo:"XX-XXI",corriente:"Marxismo / pensamiento crítico",politica:"Crítica del capitalismo",temas:["capitalismo","multitud","poder","política"],archivo:"NEGRI.html"},
+{nombre:"Maestros de la sospecha",siglo:"XX",corriente:"Filosofía contemporánea",politica:"Crítica social",temas:["sospecha","Marx","Nietzsche","Freud"],archivo:"MAESTROS.html"},
+{nombre:"Karl Popper",siglo:"XX",corriente:"Filosofía de la ciencia",politica:"Liberalismo / democracia",temas:["ciencia","falsación","democracia","sociedad abierta"],archivo:"Popper Karl"},
+{nombre:"Aníbal Quijano",siglo:"XX-XXI",corriente:"Pensamiento decolonial",politica:"Crítica social",temas:["colonialidad","poder","modernidad","decolonialidad"],archivo:"quijano.html"},
+{nombre:"Paul Ricœur",siglo:"XX",corriente:"Hermenéutica",politica:"Filosofía social",temas:["hermenéutica","memoria","identidad","ética"],archivo:"ricouer.html"},
+{nombre:"Jean-Jacques Rousseau",siglo:"XVIII",corriente:"Ilustración / contractualismo",politica:"Filosofía política",temas:["contrato social","libertad","desigualdad","Estado"],archivo:"rousseau.htm"},
+{nombre:"Bertrand Russell",siglo:"XX",corriente:"Filosofía analítica",politica:"Filosofía política",temas:["lógica","conocimiento","paz","política"],archivo:"RUSSELL.HTML"},
+{nombre:"Éric Sadin",siglo:"XX-XXI",corriente:"Filosofía contemporánea",politica:"Crítica de la tecnología",temas:["tecnología","inteligencia artificial","sociedad","digitalización"],archivo:"sadin.html"},
+{nombre:"Arthur Schopenhauer",siglo:"XIX",corriente:"Filosofía de la voluntad",politica:"Crítica social",temas:["voluntad","dolor","representación","pesimismo"],archivo:"shopenha.html"},
+{nombre:"Baruch Spinoza",siglo:"XVII",corriente:"Racionalismo",politica:"Liberalismo y libertad",temas:["Dios","naturaleza","libertad","poder"],archivo:"SPINOZA.html"},
+{nombre:"Tatiana",siglo:"XX-XXI",corriente:"Filosofía contemporánea",politica:"Pensamiento contemporáneo",temas:["filosofía","sociedad","pensamiento"],archivo:"tatian.html"},
+{nombre:"Ludwig Wittgenstein",siglo:"XX",corriente:"Filosofía analítica",politica:"Filosofía del lenguaje",temas:["lenguaje","lógica","significado","juegos de lenguaje"],archivo:"WITTGENSTEIN.html"}
+];
+
+const $=id=>document.getElementById(id);
+function valores(campo){return [...new Set(filosofos.flatMap(f=>Array.isArray(f[campo])?f[campo]:[f[campo]]))].sort((a,b)=>a.localeCompare(b,"es"))}
+function llenarSelect(id,campo){valores(campo).forEach(v=>{let o=document.createElement("option");o.value=v;o.textContent=v;$(id).appendChild(o)})}
+function render(lista){
+$("cards").innerHTML="";$("count").textContent=lista.length+" filósofo"+(lista.length===1?"":"s");
+if(!lista.length){$("cards").innerHTML="<p>No se encontraron resultados con esos criterios.</p>";return}
+lista.sort((a,b)=>a.nombre.localeCompare(b.nombre,"es")).forEach(f=>{
+let d=document.createElement("article");d.className="card";
+let enlace = f.archivo
+  ? `<a class="leer-filosofo" href="${f.archivo}">→ Leer a ${f.nombre}</a>`
+  : `<span class="sin-ficha">Ficha individual pendiente</span>`;
+d.innerHTML=`<h3>${f.nombre}</h3><div class="meta">${f.siglo} · ${f.corriente}</div><p><strong>Pensamiento político-social:</strong> ${f.politica}</p><div class="tags">${f.temas.map(t=>`<span class="tag">${t}</span>`).join("")}</div>${enlace}`;
+$("cards").appendChild(d);
+})}
+function filtrar(){
+let n=$("nombre").value.toLowerCase().trim(),c=$("corriente").value,s=$("siglo").value,p=$("politica").value,t=$("tema").value;
+render(filosofos.filter(f=>(!n||f.nombre.toLowerCase().includes(n))&&(!c||f.corriente===c)&&(!s||f.siglo===s)&&(!p||f.politica===p)&&(!t||f.temas.includes(t))))
+}
+function mostrarTodos(){$("nombre").value="";$("corriente").value="";$("siglo").value="";$("politica").value="";$("tema").value="";render([...filosofos])}
+function crearEnlaces(id,lista,tipo){let cont=$(id);lista.forEach(v=>{let a=document.createElement("a");a.href="#resultados";a.textContent=v;a.onclick=()=>{if(tipo==="corriente")$("corriente").value=v;if(tipo==="siglo")$("siglo").value=v;if(tipo==="politica")$("politica").value=v;filtrar()};cont.appendChild(a)})}
+llenarSelect("corriente","corriente");llenarSelect("siglo","siglo");llenarSelect("politica","politica");llenarSelect("tema","temas");
+["nombre","corriente","siglo","politica","tema"].forEach(id=>$(id).addEventListener(id==="nombre"?"input":"change",filtrar));
+crearEnlaces("listaCorrientes",valores("corriente"),"corriente");crearEnlaces("listaSiglos",valores("siglo"),"siglo");crearEnlaces("listaPolitica",valores("politica"),"politica");
+filosofos.map(f=>f.nombre).sort((a,b)=>a.localeCompare(b,"es")).forEach(n=>{let a=document.createElement("a");a.href="#resultados";a.textContent=n;a.onclick=()=>{$("nombre").value=n;filtrar()};$("indice").appendChild(a)});
+render([...filosofos]);
+
+</script>
+</body>
+</html>
