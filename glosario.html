@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glosario Filosófico | Carlosfilo</title>
+<meta name="description" content="Glosario filosófico Carlosfilo: conceptos, términos, principios y preguntas para leer, pensar y conversar.">
+<style>
+:root{
+  --bg:#f5f1e8;--paper:#fffdf8;--ink:#29261f;--muted:#716b60;
+  --accent:#6b4f35;--accent2:#9b7652;--line:#ded5c7;--soft:#eee7db;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+a{color:inherit}
+header{background:linear-gradient(135deg,#2e2922,#5c4835);color:#fff;padding:42px 20px 34px;text-align:center}
+header h1{margin:0;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.02em}
+header p{max-width:850px;margin:12px auto 0;font-size:1.08rem;color:#eee7dc}
+nav{background:#211e19;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px #0002}
+.nav-inner{max-width:1180px;margin:auto;display:flex;flex-wrap:wrap;justify-content:center}
+nav a{display:block;padding:12px 15px;color:#fff;text-decoration:none;font-weight:bold;font-size:.95rem}
+nav a:hover{background:#6b4f35}
+main{max-width:1180px;margin:auto;padding:28px 18px 70px}
+.intro{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:25px 28px;margin-bottom:22px;box-shadow:0 5px 20px #00000008}
+.intro h2{margin-top:0;color:var(--accent)}
+.controls{position:sticky;top:45px;z-index:10;background:var(--bg);padding:15px 0}
+.search{display:flex;gap:10px;flex-wrap:wrap}
+#search{flex:1;min-width:220px;padding:13px 16px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+button{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:9px 13px;border-radius:9px;cursor:pointer;font:inherit}
+button:hover,button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.alphabet{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.alphabet button{min-width:35px;padding:7px 9px;font-weight:bold}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+#count{color:var(--muted);font-size:.92rem;margin:12px 0}
+.letter-title{font-size:2rem;color:var(--accent);border-bottom:2px solid var(--line);padding-bottom:5px;margin:35px 0 15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:0 3px 14px #00000008}
+.card.hidden{display:none}
+.card h3{margin:0 0 8px;color:var(--accent);font-size:1.3rem}
+.card h3 span{font-size:.72rem;background:var(--soft);padding:3px 7px;border-radius:10px;color:var(--muted);margin-left:5px}
+.card p{margin:7px 0}
+.card strong{color:#51402f}
+.question{font-style:italic;color:var(--accent);border-left:3px solid var(--accent2);padding-left:11px;margin-top:12px}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.principle{background:var(--paper);border-left:5px solid var(--accent);padding:17px;border-radius:10px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.random{background:linear-gradient(135deg,#e9dfd0,#fffdf8);border:1px solid var(--line);padding:25px;border-radius:15px;margin:25px 0}
+.random h2{margin-top:0;color:var(--accent)}
+footer{text-align:center;padding:35px 18px;background:#29251f;color:#eee0cf}
+@media(max-width:700px){
+  nav a{padding:9px 10px;font-size:.86rem}
+  .controls{top:40px}
+  .intro{padding:20px}
+  main{padding-left:12px;padding-right:12px}
+}
+</style>
+</head>
+<body>
+<header id="inicio">
+<h1>Glosario Filosófico Carlosfilo</h1>
+<p>Palabras, conceptos y principios para acercarnos a la filosofía, comprender sus preguntas y volverlas preguntas de nuestra propia vida.</p>
+</header>
+
+<nav>
+<div class="nav-inner">
+<a href="#inicio">Inicio</a><a href="#glosario">Glosario</a><a href="#principios">Principios</a>
+<a href="#autores">Autores</a><a href="#pensar">Para pensar</a>
+</div>
+</nav>
+
+<main>
+<section class="intro">
+<h2>Lecturas filosóficas para no filósofos</h2>
+<p>Este glosario no pretende cerrar el significado de las palabras. Al contrario: intenta abrirlas. Cada concepto puede ser una puerta hacia un autor, una obra, una experiencia o una pregunta.</p>
+<p><strong>Una palabra puede contener una historia. Un concepto puede cambiar nuestra manera de mirar.</strong></p>
+</section>
+
+<section class="controls" aria-label="Herramientas de búsqueda">
+<div class="search">
+<input id="search" type="search" placeholder="Buscar un término, filósofo o concepto..." aria-label="Buscar en el glosario">
+<button onclick="clearSearch()">Limpiar</button>
+</div>
+<div class="alphabet" id="alphabet"></div>
+<div class="filters">
+<button class="active" data-cat="todos">Todos</button>
+<button data-cat="fundamentales">Fundamentales</button>
+<button data-cat="etica">Ética y existencia</button>
+<button data-cat="politica">Política y poder</button>
+<button data-cat="conocimiento">Conocimiento y lenguaje</button>
+<button data-cat="metafisica">Ser y realidad</button>
+</div>
+<div id="count"></div>
+</section>
+
+<section id="glosario"></section>
+
+<section id="principios">
+<h2 class="letter-title">Principios filosóficos</h2>
+<div class="principles">
+<div class="principle"><h3>Principio de identidad</h3><p><strong>A es A.</strong> Una cosa es idéntica a sí misma.</p></div>
+<div class="principle"><h3>Principio de no contradicción</h3><p>Una cosa no puede ser y no ser al mismo tiempo y en el mismo sentido.</p></div>
+<div class="principle"><h3>Principio del tercero excluido</h3><p>En la lógica clásica, entre una afirmación y su negación no existe una tercera posibilidad.</p></div>
+<div class="principle"><h3>Principio de razón suficiente</h3><p>Lo que existe o sucede tiene una razón o fundamento que permite explicarlo.</p></div>
+<div class="principle"><h3>Principio de causalidad</h3><p>Los acontecimientos pueden comprenderse mediante relaciones de causa y efecto.</p></div>
+<div class="principle"><h3>Imperativo categórico</h3><p>Actúa de modo que la regla de tu acción pueda valer como principio universal.</p></div>
+<div class="principle"><h3>Principio de utilidad</h3><p>Una acción puede evaluarse por sus consecuencias y por el bienestar que produce.</p></div>
+<div class="principle"><h3>Principio de responsabilidad</h3><p>En Hans Jonas, nuestras acciones deben considerar también las consecuencias para las generaciones futuras y la continuidad de la vida.</p></div>
+<div class="principle"><h3>Principio de falsabilidad</h3><p>Una teoría científica debe poder exponerse a una posible refutación.</p></div>
+<div class="principle"><h3>Principio de precaución</h3><p>Ante riesgos graves o irreversibles, la incertidumbre no debería ser una excusa para ignorarlos.</p></div>
+</div>
+</section>
+
+<section id="autores">
+<h2 class="letter-title">Autores y conceptos clave</h2>
+<div class="grid">
+<div class="card"><h3>Nietzsche</h3><p>Muerte de Dios · Nihilismo · Voluntad de poder · Eterno retorno · Superhombre · Genealogía · Perspectivismo</p></div>
+<div class="card"><h3>Sartre</h3><p>Libertad · Responsabilidad · Angustia · Mala fe · Elección · Proyecto · Existencia precede a la esencia</p></div>
+<div class="card"><h3>Foucault</h3><p>Poder · Saber · Biopoder · Biopolítica · Genealogía · Discurso · Disciplina · Normalización · Resistencia</p></div>
+<div class="card"><h3>Deleuze</h3><p>Devenir · Diferencia · Repetición · Rizoma · Línea de fuga · Sociedad de control · Deseo</p></div>
+<div class="card"><h3>Derrida</h3><p>Deconstrucción · Différance · Huella · Texto · Alteridad · Hospitalidad</p></div>
+<div class="card"><h3>Simone de Beauvoir</h3><p>Libertad · Alteridad · Situación · Existencia · Responsabilidad · Ambigüedad</p></div>
+<div class="card"><h3>Arendt</h3><p>Acción · Natalidad · Pluralidad · Totalitarismo · Banalidad del mal · Espacio público · Libertad</p></div>
+<div class="card"><h3>Heidegger</h3><p>Ser · Dasein · Ser-en-el-mundo · Angustia · Autenticidad · Tiempo · Técnica</p></div>
+<div class="card"><h3>Camus</h3><p>Absurdo · Rebelión · Libertad · Muerte · Sentido</p></div>
+<div class="card"><h3>Byung-Chul Han</h3><p>Sociedad del cansancio · Rendimiento · Psicopolítica · Autoexplotación · Infocracia</p></div>
+</div>
+</section>
+
+<section id="pensar" class="random">
+<h2>Una palabra para pensar</h2>
+<div id="randomWord"></div>
+<button onclick="randomConcept()">Elegir otra palabra</button>
+</section>
+</main>
+
+<footer>
+<p><strong>Carlosfilo · Filosofía</strong></p>
+<p>Leer · Preguntar · Pensar · Conversar</p>
+</footer>
+
+<script>
+const concepts = [
+["A","Absoluto","fundamentales","Aquello que se piensa como independiente de toda condición o relación.","Metafísica; idealismo; Hegel.","¿Existe algo que pueda ser verdaderamente absoluto?"],
+["A","Abstracción","fundamentales","Proceso mediante el cual se separan mentalmente rasgos comunes para formar un concepto.","Aristóteles; escolástica; empirismo.","¿Qué perdemos de la realidad cuando la convertimos en concepto?"],
+["A","Absurdo","etica","Situación en la que aparece el conflicto entre nuestra búsqueda de sentido y el silencio del mundo.","Camus.","¿Cómo vivir cuando no encontramos un sentido dado de antemano?"],
+["A","Acción","etica","Actuar significa intervenir en el mundo y abrir posibilidades nuevas.","Arendt; Sartre.","¿Qué cambia en el mundo cuando decidimos actuar?"],
+["A","Alma","metafisica","En distintas tradiciones, principio de vida, identidad o dimensión no reducible al cuerpo.","Platón; Aristóteles; Descartes.","¿Somos solamente nuestro cuerpo?"],
+["A","Alienación","politica","Experiencia de separación respecto de uno mismo, del trabajo, de los otros o de la propia actividad.","Marx; Hegel.","¿Cuándo dejamos de reconocernos en aquello que hacemos?"],
+["A","Alteridad","etica","Condición de reconocer al otro como otro, irreductible a nosotros mismos.","Levinas; Beauvoir; Derrida.","¿Podemos comprender al otro sin convertirlo en una versión de nosotros?"],
+["A","Anarquismo","politica","Tradición crítica de las formas de dominación y de la autoridad impuesta.","Proudhon; Bakunin; Kropotkin.","¿Es posible una sociedad sin dominación?"],
+["A","Antropocentrismo","fundamentales","Perspectiva que coloca al ser humano en el centro de la consideración filosófica o moral.","Renacimiento; modernidad; ecología.","¿Qué ocurre cuando dejamos de pensar al ser humano como centro?"],
+["A","Aporía","fundamentales","Dificultad o camino sin salida que revela una tensión dentro del pensamiento.","Sócrates; Platón; Derrida.","¿Una contradicción puede ser también una forma de avanzar?"],
+["A","Arjé","metafisica","Principio, origen o fundamento primero de todas las cosas.","Presocráticos.","¿De qué surge aquello que existe?"],
+["A","Areté","etica","Excelencia o virtud que permite realizar de manera plena aquello que uno puede llegar a ser.","Sócrates; Platón; Aristóteles.","¿Qué significa vivir bien?"],
+["A","Autonomía","etica","Capacidad de darse a uno mismo una norma y actuar responsablemente según ella.","Kant; Beauvoir.","¿Elegimos realmente nuestras propias reglas?"],
+["A","Azar","metafisica","Aquello que sucede sin un propósito o determinación necesaria reconocible.","Aristóteles; contemporáneos.","¿Cuánto de nuestra vida depende del azar?"],
+["B","Bien","etica","Aquello que una tradición filosófica considera valioso o deseable para la vida humana.","Platón; Aristóteles; Kant.","¿Qué hace que algo sea bueno?"],
+["B","Banalidad del mal","politica","Expresión de Arendt para pensar cómo actos terribles pueden aparecer en personas que renuncian a pensar críticamente sus actos.","Arendt.","¿Puede el mal crecer allí donde dejamos de pensar?"],
+["B","Biopolítica","politica","Forma de poder que administra y regula la vida de las poblaciones.","Foucault.","¿Cuándo la vida se convierte en objeto de administración política?"],
+["B","Biopoder","politica","Poder que interviene sobre los cuerpos, la salud, la reproducción y la población.","Foucault.","¿Quién decide cómo deben vivir los cuerpos?"],
+["C","Causalidad","metafisica","Relación mediante la cual un acontecimiento puede ser comprendido como causa de otro.","Aristóteles; Hume; Kant.","¿Todo lo que sucede tiene una causa?"],
+["C","Caos","metafisica","Situación de desorden o indeterminación; también, en algunas cosmologías, estado originario.","Presocráticos; filosofía contemporánea.","¿El orden necesita surgir del caos?"],
+["C","Cogito","conocimiento","El 'pienso, luego existo' expresa en Descartes la certeza del pensamiento como punto de partida.","Descartes.","¿Qué queda cuando ponemos todo en duda?"],
+["C","Comunidad","politica","Forma de convivencia basada en vínculos, prácticas y responsabilidades compartidas.","Aristóteles; Arendt; comunitarismo.","¿Qué nos convierte en una comunidad?"],
+["C","Concepto","conocimiento","Forma de pensamiento que permite reunir, distinguir y comprender aspectos de la realidad.","Platón; Aristóteles; Deleuze.","¿El concepto descubre la realidad o la construye?"],
+["C","Conciencia","conocimiento","Capacidad de experimentar, advertir y reflexionar sobre uno mismo y el mundo.","Descartes; Husserl; Sartre.","¿Qué significa ser consciente?"],
+["C","Conciencia de clase","politica","Comprensión de la posición social y de los intereses compartidos dentro de una estructura de clases.","Marx.","¿Cuándo una experiencia individual se vuelve colectiva?"],
+["C","Conocimiento","conocimiento","Relación mediante la cual buscamos comprender aquello que consideramos real.","Platón; Descartes; Kant; epistemología.","¿Cómo sabemos que sabemos?"],
+["C","Contingencia","metafisica","Aquello que puede ser de otra manera y no existe por necesidad absoluta.","Aristóteles; existencialismo.","¿Qué parte de nuestra vida podría haber sido diferente?"],
+["C","Contrato social","politica","Idea según la cual la sociedad y la autoridad política pueden pensarse como resultado de un acuerdo entre individuos.","Hobbes; Locke; Rousseau.","¿Por qué obedecemos a un poder político?"],
+["C","Cosmos","metafisica","Mundo entendido como totalidad ordenada.","Presocráticos; estoicismo.","¿Vivimos en un cosmos o en un mundo que nosotros ordenamos?"],
+["C","Crítica","conocimiento","Examen que busca descubrir los límites, condiciones y supuestos de una idea o práctica.","Kant; Marx; Foucault.","¿Qué cambia cuando aprendemos a cuestionar lo que parece natural?"],
+["C","Cultura","politica","Conjunto de prácticas, símbolos, valores y significados mediante los cuales una comunidad interpreta el mundo.","Cassirer; antropología; filosofía social.","¿Cuánto de lo que somos es cultura?"],
+["D","Deber","etica","Exigencia moral que obliga a actuar de determinada manera, independientemente del interés personal.","Kant.","¿Hay cosas que debemos hacer aunque no nos convengan?"],
+["D","Deconstrucción","conocimiento","Lectura crítica que muestra tensiones, oposiciones y supuestos ocultos dentro de un texto o concepto.","Derrida.","¿Qué ocurre cuando desarmamos aquello que parecía evidente?"],
+["D","Devenir","metafisica","Proceso de transformación continua; llegar a ser en lugar de permanecer idéntico.","Heráclito; Nietzsche; Deleuze.","¿Somos algo fijo o estamos siempre llegando a ser?"],
+["D","Dialéctica","fundamentales","Pensamiento que aborda las tensiones y contradicciones como parte del movimiento de los conceptos y de la realidad.","Platón; Hegel; Marx.","¿Puede una contradicción producir algo nuevo?"],
+["D","Determinismo","metafisica","Concepción según la cual los acontecimientos están determinados por condiciones previas.","Estoicos; Spinoza; ciencia moderna.","¿Sería posible la libertad en un mundo completamente determinado?"],
+["D","Doxa","conocimiento","Opinión o creencia que se distingue del conocimiento fundamentado.","Platón.","¿Cuántas de nuestras certezas son solamente opiniones?"],
+["D","Dualismo","metafisica","Concepción que distingue dos principios o dimensiones fundamentales de la realidad.","Platón; Descartes.","¿Somos cuerpo y mente, o una unidad?"],
+["D","Duda","conocimiento","Suspensión de la certeza que permite examinar críticamente nuestras creencias.","Descartes; escepticismo.","¿Dudar nos aleja de la verdad o puede acercarnos a ella?"],
+["D","Dasein","metafisica","En Heidegger, el ser humano entendido como aquel ente para quien está en juego su propio ser.","Heidegger.","¿Qué significa existir sabiendo que existimos?"],
+["E","Eidos","metafisica","Forma o esencia inteligible de aquello que aparece.","Platón; Husserl.","¿Vemos las cosas tal como son o tal como aparecen?"],
+["E","Empirismo","conocimiento","Corriente que otorga un papel fundamental a la experiencia sensible en la formación del conocimiento.","Locke; Berkeley; Hume.","¿Puede existir conocimiento sin experiencia?"],
+["E","Ente","metafisica","Aquello que es o existe, considerado en cuanto existente.","Aristóteles; Heidegger.","¿Qué diferencia hay entre un ente y el ser?"],
+["E","Episteme","conocimiento","Conocimiento fundamentado; en Foucault, también configuración histórica de lo que puede ser pensado y sabido.","Platón; Foucault.","¿Qué condiciones hacen posible que algo sea considerado verdadero?"],
+["E","Escepticismo","conocimiento","Actitud que cuestiona la posibilidad o el alcance de nuestras certezas.","Pirronismo; Sexto Empírico; Hume.","¿Cuánto podemos estar seguros de conocer?"],
+["E","Esencia","metafisica","Aquello que se considera constitutivo de lo que una cosa es.","Aristóteles; Husserl; existencialismo.","¿Tenemos una esencia antes de vivir o la construimos?"],
+["E","Estética","etica","Reflexión filosófica sobre el arte, la belleza, la sensibilidad y la experiencia estética.","Kant; Hegel; Nietzsche.","¿Por qué algo puede conmovernos sin ser útil?"],
+["E","Ética","etica","Reflexión sobre las acciones, los valores y las formas de vida que consideramos buenas o justas.","Aristóteles; Kant; Nietzsche.","¿Cómo deberíamos vivir?"],
+["E","Eterno retorno","etica","Idea nietzscheana que imagina la repetición infinita de la existencia como prueba de afirmación de la vida.","Nietzsche.","¿Vivirías tu vida nuevamente, exactamente igual, eternamente?"],
+["E","Existencia","etica","Hecho de estar ahí, de vivir y abrir posibilidades en un mundo concreto.","Kierkegaard; Heidegger; Sartre.","¿Qué hacemos con el hecho de existir?"],
+["E","Époché","conocimiento","Suspensión fenomenológica de la actitud natural para examinar cómo se da la experiencia.","Husserl.","¿Qué aparece cuando suspendemos nuestros prejuicios?"],
+["F","Falacia","conocimiento","Razonamiento que parece válido pero contiene un error lógico o argumentativo.","Aristóteles; lógica.","¿Una conclusión convincente es necesariamente verdadera?"],
+["F","Fenomenología","conocimiento","Método y corriente que estudia la experiencia tal como se presenta a la conciencia.","Husserl; Heidegger; Merleau-Ponty.","¿Cómo se nos presenta el mundo antes de explicarlo?"],
+["F","Finitud","etica","Condición de aquello que tiene límites, especialmente la existencia humana.","Heidegger; Sartre.","¿Qué cambia cuando sabemos que nuestra vida tiene un límite?"],
+["F","Filosofía","fundamentales","Actividad de preguntar, examinar conceptos y buscar comprender el mundo y nuestra existencia.","Sócrates; Platón; Aristóteles y toda la tradición filosófica.","¿Qué pregunta no podemos dejar de hacernos?"],
+["F","Fisis / Physis","metafisica","Naturaleza entendida como aquello que surge, crece y posee un principio propio de movimiento.","Presocráticos; Aristóteles.","¿Qué significa vivir de acuerdo con la naturaleza?"],
+["F","Fortuna","etica","Fuerza del azar y de las circunstancias que puede modificar la vida humana más allá de nuestra voluntad.","Aristóteles; estoicismo; Maquiavelo.","¿Cuánto depende nuestra vida de lo que no controlamos?"],
+["G","Genealogía","politica","Investigación que rastrea históricamente el surgimiento de conceptos, prácticas y relaciones de poder.","Nietzsche; Foucault.","¿Lo que hoy parece natural siempre fue así?"],
+["G","Giro lingüístico","conocimiento","Transformación filosófica que puso al lenguaje en el centro de muchos problemas del pensamiento.","Wittgenstein; Heidegger; filosofía analítica.","¿Hasta dónde nuestro lenguaje determina lo que podemos pensar?"],
+["G","Gracia","etica","Don recibido que no depende enteramente del mérito o del esfuerzo propio.","Agustín; Pascal; Kierkegaard.","¿Hay cosas que recibimos sin haberlas merecido?"],
+["G","Gnoseología","conocimiento","Rama de la filosofía que estudia el conocimiento en general, sus posibilidades y límites.","Platón; Descartes; Kant.","¿Qué significa conocer?"],
+["H","Hermenéutica","conocimiento","Arte y filosofía de la interpretación, especialmente de textos, acciones y experiencias.","Gadamer; Ricoeur; Heidegger.","¿Toda comprensión implica interpretar?"],
+["H","Historicidad","metafisica","Condición de existir dentro de una historia que configura nuestras posibilidades.","Heidegger; Gadamer.","¿Podemos escapar de la época que nos toca vivir?"],
+["H","Humanismo","fundamentales","Tradición que coloca la dignidad y las capacidades humanas en el centro de la reflexión.","Renacimiento; Sartre; humanismos contemporáneos.","¿Qué significa defender lo humano?"],
+["H","Heteronomía","etica","Situación en la que las normas de la acción provienen de una instancia externa al sujeto.","Kant.","¿Vivimos según nuestras propias reglas o según reglas ajenas?"],
+["I","Idea","metafisica","Contenido inteligible mediante el cual pensamos aquello que conocemos.","Platón; Descartes; idealismo.","¿Las ideas reflejan el mundo o lo construyen?"],
+["I","Idealismo","metafisica","Corriente que otorga a las ideas, la conciencia o el espíritu un papel fundamental en la constitución de la realidad conocida.","Platón; Berkeley; Kant; Hegel.","¿Conocemos una realidad independiente de nuestra conciencia?"],
+["I","Identidad","fundamentales","Relación de algo consigo mismo y, en sentido personal, continuidad de aquello que reconocemos como propio.","Aristóteles; Locke; Ricoeur.","¿Qué hace que sigamos siendo nosotros mismos?"],
+["I","Ideología","politica","Conjunto de ideas y representaciones que puede expresar, justificar o encubrir relaciones sociales y de poder.","Marx; Althusser; Mannheim.","¿Nuestras ideas son realmente nuestras?"],
+["I","Ilustración","conocimiento","Movimiento que defendió el uso autónomo de la razón y la crítica de la autoridad tradicional.","Kant; Voltaire; Diderot.","¿Qué significa atreverse a pensar por uno mismo?"],
+["I","Imperativo categórico","etica","Principio moral kantiano que exige actuar según máximas universalizables.","Kant.","¿Podría querer que todos actuaran como yo actúo?"],
+["I","Inconsciente","conocimiento","Dimensión de la vida psíquica que no coincide con la conciencia y que puede influir en pensamientos y acciones.","Freud; Jung; filosofía contemporánea.","¿Somos dueños de todo lo que pensamos y deseamos?"],
+["I","Intencionalidad","conocimiento","Estructura de la conciencia por la cual toda conciencia es conciencia de algo.","Husserl.","¿Podemos pensar sin dirigirnos hacia algo?"],
+["I","Interpretación","conocimiento","Proceso mediante el cual atribuimos sentido a textos, hechos, símbolos o experiencias.","Nietzsche; Gadamer; Ricoeur.","¿Comprender es siempre interpretar?"],
+["J","Justicia","etica","Idea y práctica de dar a cada uno aquello que corresponde, según distintos criterios de igualdad, mérito o necesidad.","Platón; Aristóteles; Rawls.","¿Qué significa que una sociedad sea justa?"],
+["J","Juicio","conocimiento","Acto mediante el cual afirmamos, negamos o evaluamos algo.","Kant; Arendt.","¿Qué significa juzgar responsablemente?"],
+["K","Kantismo","fundamentales","Tradición filosófica inspirada en la crítica kantiana, la autonomía moral y los límites de la razón.","Kant; neokantismo.","¿Qué puede y qué no puede conocer la razón?"],
+["L","Lenguaje","conocimiento","Sistema de signos mediante el cual expresamos, compartimos y configuramos significados.","Wittgenstein; Heidegger; Derrida.","¿El lenguaje describe el mundo o también lo construye?"],
+["L","Libertad","etica","Capacidad de elegir y actuar, siempre situada dentro de condiciones históricas y sociales.","Kant; Sartre; Beauvoir; Foucault.","¿Somos libres cuando hacemos lo que queremos?"],
+["L","Logos","fundamentales","Palabra, razón, discurso o principio de orden inteligible.","Heráclito; estoicos; filosofía griega.","¿Puede la razón revelar un orden del mundo?"],
+["L","Lógica","conocimiento","Disciplina que estudia las formas válidas del razonamiento.","Aristóteles; Frege; lógica contemporánea.","¿Qué hace que un razonamiento sea válido?"],
+["L","Lucha de clases","politica","Conflicto histórico entre grupos definidos por posiciones diferentes dentro de las relaciones de producción.","Marx; Engels.","¿Qué conflictos económicos atraviesan una sociedad?"],
+["L","Mundo de la vida","conocimiento","Mundo cotidiano, previo a las abstracciones científicas, en el que vivimos y damos sentido a la experiencia.","Husserl; Habermas.","¿Qué queda fuera cuando la ciencia abstrae la experiencia cotidiana?"],
+["M","Materialismo","metafisica","Concepción que considera la materia o las condiciones materiales fundamentales para explicar la realidad.","Demócrito; Marx; materialismos contemporáneos.","¿Puede explicarse la conciencia desde condiciones materiales?"],
+["M","Metafísica","metafisica","Reflexión sobre los fundamentos últimos de la realidad, el ser y la existencia.","Aristóteles; Kant; Heidegger.","¿Qué hay detrás de aquello que aparece?"],
+["M","Método","conocimiento","Camino ordenado para investigar, argumentar o alcanzar un conocimiento.","Descartes; ciencia moderna.","¿Cómo sabemos que estamos buscando de una manera adecuada?"],
+["M","Mito","fundamentales","Relato simbólico mediante el cual una cultura interpreta el origen, el orden y el sentido del mundo.","Grecia antigua; Cassirer.","¿Qué verdades puede contener un mito?"],
+["M","Monismo","metafisica","Concepción que sostiene que la realidad fundamental puede comprenderse desde un único principio.","Parménides; Spinoza.","¿Puede todo lo real provenir de una sola realidad?"],
+["M","Moral","etica","Conjunto de normas, valores y costumbres mediante los cuales una persona o comunidad orienta su conducta.","Kant; Nietzsche; Durkheim.","¿Quién decide qué está bien y qué está mal?"],
+["M","Muerte","etica","Límite fundamental de la existencia humana y problema filosófico sobre la finitud.","Epicuro; Heidegger; Camus.","¿Cómo transforma la muerte nuestra manera de vivir?"],
+["N","Nada","metafisica","Concepto límite que designa la ausencia de ser o aquello que no es.","Parménides; Heidegger; Sartre.","¿Podemos pensar realmente la nada?"],
+["N","Naturaleza","metafisica","Aquello que surge y se desarrolla según principios propios; también, el mundo no producido artificialmente.","Aristóteles; Spinoza; filosofía ambiental.","¿Somos parte de la naturaleza o nos hemos separado de ella?"],
+["N","Necesidad","metafisica","Aquello que no puede ser de otra manera bajo determinadas condiciones.","Aristóteles; Spinoza.","¿Qué diferencia hay entre lo necesario y lo posible?"],
+["N","Nihilismo","etica","Experiencia o doctrina según la cual los valores y sentidos tradicionales pierden su fundamento.","Nietzsche.","¿Qué ocurre cuando dejamos de creer en los valores heredados?"],
+["N","Norma","politica","Regla explícita o implícita que orienta y regula conductas.","Kant; Foucault; teoría social.","¿Quién establece las normas que gobiernan nuestra vida?"],
+["O","Objetividad","conocimiento","Ideal de conocimiento que busca reducir la dependencia respecto de perspectivas o intereses particulares.","Kant; ciencia moderna.","¿Es posible conocer sin perspectiva?"],
+["O","Objeto","conocimiento","Aquello hacia lo cual se dirige el conocimiento o la acción.","Kant; Husserl.","¿Existe el objeto tal como lo conocemos fuera de nuestra relación con él?"],
+["O","Ontología","metafisica","Rama de la filosofía que pregunta por el ser y por los tipos fundamentales de lo que existe.","Aristóteles; Heidegger.","¿Qué significa que algo sea?"],
+["O","Opinión","conocimiento","Creencia o juicio que puede no estar suficientemente fundamentado.","Platón; epistemología.","¿Cuándo una opinión se convierte en conocimiento?"],
+["O","Otro","etica","Aquel que no soy yo y cuya alteridad plantea una exigencia ética.","Levinas; Beauvoir; Derrida.","¿Qué me exige la presencia del otro?"],
+["P","Paradigma","conocimiento","Marco compartido de conceptos, problemas y métodos que orienta una práctica científica.","Kuhn.","¿Qué ocurre cuando cambia el modo de mirar un problema?"],
+["P","Paradoja","fundamentales","Enunciado o situación aparentemente contradictoria que desafía nuestras categorías habituales.","Zenón; filosofía contemporánea.","¿Una paradoja revela un error o un límite del pensamiento?"],
+["P","Perspectivismo","conocimiento","Idea de que todo conocimiento se produce desde una perspectiva determinada.","Nietzsche; Ortega y Gasset.","¿Puede existir una mirada sin perspectiva?"],
+["P","Poder","politica","Capacidad de influir, orientar o transformar conductas y relaciones.","Foucault; Arendt; Weber.","¿El poder siempre pertenece a alguien?"],
+["P","Praxis","politica","Actividad humana reflexiva mediante la cual transformamos la realidad.","Aristóteles; Marx; Arendt.","¿Pensar puede transformar la realidad?"],
+["P","Posmodernidad","politica","Nombre dado a ciertas transformaciones culturales y filosóficas que cuestionan relatos totalizantes de la modernidad.","Lyotard; Vattimo; Foucault.","¿Todavía creemos en grandes relatos sobre el progreso?"],
+["P","Post-verdad","conocimiento","Situación en la que hechos objetivos pueden tener menos influencia que emociones, identidades o creencias en la formación de opiniones públicas.","Filosofía política contemporánea; medios digitales.","¿Qué ocurre cuando sentir pesa más que comprobar?"],
+["Q","Quididad","metafisica","Aquello por lo cual una cosa es lo que es; su 'qué' o esencia.","Aristóteles; escolástica.","¿Qué hace que algo sea precisamente lo que es?"],
+["R","Razón","conocimiento","Facultad de argumentar, relacionar ideas, justificar afirmaciones y orientar acciones.","Platón; Kant; racionalismo.","¿Hasta dónde puede llevarnos la razón?"],
+["R","Realidad","metafisica","Aquello que existe o se considera existente, independientemente de que sea percibido o pensado.","Aristóteles; Kant; fenomenología.","¿Qué llamamos real?"],
+["R","Realismo","metafisica","Concepción que sostiene que existe una realidad que no depende completamente de nuestra conciencia.","Aristóteles; realismo científico.","¿Existe el mundo aunque nadie lo observe?"],
+["R","Relativismo","conocimiento","Concepción según la cual la verdad o los valores dependen de un marco, perspectiva o contexto.","Protágoras; filosofía contemporánea.","¿Toda verdad depende del punto de vista?"],
+["R","Responsabilidad","etica","Obligación de responder por nuestras acciones y sus consecuencias.","Sartre; Jonas; Arendt.","¿Somos responsables también de aquello que no quisimos provocar?"],
+["R","Revolución","politica","Transformación profunda del orden político, social o económico.","Marx; Arendt.","¿Cuándo reformar ya no parece suficiente?"],
+["S","Saber","conocimiento","Conocimiento que ha sido elaborado y reconocido dentro de un determinado contexto histórico y social.","Foucault.","¿Quién decide qué cuenta como saber?"],
+["S","Ser","metafisica","Concepto fundamental que pregunta por aquello que significa que algo sea.","Parménides; Aristóteles; Heidegger.","¿Qué significa ser?"],
+["S","Sociedad","politica","Forma organizada de convivencia humana atravesada por normas, instituciones y relaciones.","Aristóteles; Hobbes; Marx.","¿La sociedad nos limita o nos hace posibles?"],
+["S","Subjetividad","conocimiento","Modo en que una persona se constituye como sujeto que experimenta, piensa y actúa.","Foucault; Sartre; fenomenología.","¿Cómo llegamos a ser quienes somos?"],
+["S","Sujeto","conocimiento","Aquel que conoce, actúa, interpreta y se relaciona con el mundo.","Descartes; Kant; Foucault.","¿El sujeto es autónomo o también es producido por la sociedad?"],
+["S","Sustancia","metafisica","Aquello que existe en sí mismo y sirve de fundamento a sus propiedades, en la metafísica clásica.","Aristóteles; Descartes; Spinoza.","¿Qué permanece cuando cambian las propiedades de una cosa?"],
+["S","Superhombre / Übermensch","etica","Figura nietzscheana asociada a la superación creadora del hombre y de los valores heredados.","Nietzsche; Así habló Zaratustra.","¿Podemos crear nuevos valores?"],
+["T","Técnica","politica","Conjunto de procedimientos mediante los cuales transformamos la realidad para determinados fines.","Heidegger; Ortega y Gasset.","¿La técnica es solamente una herramienta?"],
+["T","Tecnología","politica","Aplicación organizada de conocimientos y técnicas para producir transformaciones y resolver problemas.","Heidegger; Han; filosofía de la técnica.","¿La tecnología transforma también nuestra manera de vivir?"],
+["T","Teleología","metafisica","Concepción que interpreta procesos en relación con fines o propósitos.","Aristóteles; Kant.","¿Todo proceso tiene un fin?"],
+["T","Tiempo","metafisica","Dimensión de cambio, sucesión y experiencia en la que transcurre la existencia.","Aristóteles; Agustín; Heidegger; Bergson.","¿El tiempo existe fuera de nosotros o también es experiencia?"],
+["T","Totalidad","metafisica","Conjunto pensado como unidad que integra sus partes y relaciones.","Hegel; Marx; Lukács.","¿Podemos comprender una parte sin pensar el todo?"],
+["T","Trascendencia","metafisica","Aquello que va más allá de un límite o de la experiencia inmediata.","Platón; Kant; Levinas.","¿Hay algo que nos lleva más allá de nosotros mismos?"],
+["U","Universal","fundamentales","Aquello que puede predicarse de muchos individuos o que pretende valer para todos.","Platón; Aristóteles; Kant.","¿Puede existir algo válido para todos?"],
+["U","Universalismo","etica","Perspectiva que sostiene la existencia de principios o valores con validez más allá de un grupo particular.","Estoicismo; Kant; derechos humanos.","¿Hay valores que deberían valer para todos?"],
+["U","Utilitarismo","etica","Teoría ética que evalúa las acciones según sus consecuencias para el bienestar.","Bentham; Mill.","¿Una buena acción es la que produce el mayor bienestar?"],
+["U","Utopía","politica","Imagen de una sociedad ideal que permite criticar la sociedad existente.","Tomás Moro; Bloch.","¿Necesitamos imaginar otro mundo para transformar este?"],
+["V","Vacío","metafisica","Imagen filosófica de ausencia, falta o espacio sin contenido determinado.","Demócrito; Sartre; filosofía contemporánea.","¿Qué significa experimentar el vacío?"],
+["V","Valor","etica","Aquello que consideramos digno de aprecio, elección o defensa.","Nietzsche; Scheler.","¿Por qué algo merece ser valorado?"],
+["V","Verdad","conocimiento","Relación entre lo que afirmamos y aquello que consideramos verdadero o real; concepto discutido por múltiples tradiciones.","Platón; Aristóteles; Nietzsche; Foucault.","¿Qué significa decir que algo es verdadero?"],
+["V","Verificación","conocimiento","Procedimiento destinado a comprobar una afirmación mediante criterios o experiencias pertinentes.","Empirismo; positivismo.","¿Cómo comprobamos lo que afirmamos?"],
+["V","Vida","etica","Existencia de los seres vivos; también, problema filosófico sobre su sentido, fuerza y valor.","Aristóteles; Nietzsche; Bergson; Jonas.","¿Qué significa afirmar la vida?"],
+["V","Violencia","politica","Uso de la fuerza o imposición que afecta la integridad o libertad de otros.","Arendt; Benjamin; filosofía política.","¿Puede existir poder sin violencia?"],
+["V","Virtud","etica","Disposición estable que orienta a actuar bien y desarrollar capacidades humanas.","Aristóteles; estoicos.","¿La virtud se aprende o se practica?"],
+["V","Vitalismo","metafisica","Conjunto de perspectivas que otorgan a la vida un papel fundamental frente a explicaciones puramente mecanicistas.","Bergson; Nietzsche.","¿Puede la vida reducirse a mecanismos?"],
+["V","Voluntad","etica","Facultad o fuerza mediante la cual deseamos, elegimos y orientamos nuestras acciones.","Schopenhauer; Nietzsche.","¿Queremos realmente lo que creemos querer?"],
+["V","Voluntad de poder","etica","Concepto nietzscheano vinculado a la fuerza creadora, afirmativa y transformadora de la vida.","Nietzsche.","¿Vivir es también crear y transformarse?"],
+["W","Weltanschauung","fundamentales","'Cosmovisión': manera global de interpretar el mundo, la vida y el lugar del ser humano.","Dilthey; filosofía de la cultura.","¿Qué visión del mundo guía nuestras decisiones?"],
+["Y","Yo","conocimiento","Nombre que designa la experiencia o representación del propio sujeto.","Descartes; Freud; Fichte; Ricoeur.","¿Quién soy cuando digo 'yo'?"],
+["Z","Zaratustra","etica","Figura central de la obra de Nietzsche, portavoz de ideas como el eterno retorno y el superhombre.","Nietzsche.","¿Qué tendría que superar el ser humano para crear nuevos valores?"],
+["Z","Zeitgeist","fundamentales","'Espíritu de la época': conjunto de ideas, sensibilidades y condiciones que caracterizan un período histórico.","Hegel; filosofía de la historia.","¿Cuánto de nuestro pensamiento pertenece a nuestra época?"]
+];
+
+const alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const glosario=document.getElementById("glosario");
+const search=document.getElementById("search");
+let activeCat="todos", activeLetter="todos";
+
+function norm(s){return s.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase();}
+function renderAlphabet(){
+  const box=document.getElementById("alphabet");
+  box.innerHTML='<button class="active" data-letter="todos">Todas</button>';
+  alphabet.forEach(l=>{
+    const b=document.createElement("button"); b.textContent=l;b.dataset.letter=l;
+    b.onclick=()=>{activeLetter=l;document.querySelectorAll(".alphabet button").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()};
+    box.appendChild(b);
+  });
+  box.firstChild.onclick=()=>{activeLetter="todos";document.querySelectorAll(".alphabet button").forEach(x=>x.classList.remove("active"));box.firstChild.classList.add("active");render()};
+}
+function render(){
+  const q=norm(search.value.trim());
+  glosario.innerHTML="";
+  let shown=0;
+  alphabet.forEach(letter=>{
+    const items=concepts.filter(c=>c[0]===letter && (activeLetter==="todos"||activeLetter===letter) &&
+      (activeCat==="todos"||c[2]===activeCat) &&
+      (!q||norm(c.join(" ")).includes(q)));
+    if(!items.length)return;
+    const sec=document.createElement("section");
+    sec.innerHTML='<h2 class="letter-title">'+letter+'</h2>';
+    const grid=document.createElement("div");grid.className="grid";
+    items.forEach(c=>{
+      shown++;
+      const card=document.createElement("article");card.className="card";
+      card.innerHTML='<h3>'+c[1]+' <span>'+labelCat(c[2])+'</span></h3>'+
+        '<p><strong>Definición:</strong> '+c[3]+'</p>'+
+        '<p><strong>Filósofos relacionados:</strong> '+c[4]+'</p>'+
+        '<p class="question"><strong>Para pensar:</strong> '+c[5]+'</p>';
+      grid.appendChild(card);
+    });
+    sec.appendChild(grid);glosario.appendChild(sec);
+  });
+  document.getElementById("count").textContent=shown+" conceptos encontrados.";
+}
+function labelCat(c){return {fundamentales:"Fundamental",etica:"Ética",politica:"Política",conocimiento:"Conocimiento",metafisica:"Ser y realidad"}[c]||c}
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{
+  activeCat=b.dataset.cat;document.querySelectorAll(".filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");render();
+});
+search.addEventListener("input",render);
+function clearSearch(){search.value="";activeLetter="todos";document.querySelectorAll(".alphabet button").forEach(x=>x.classList.remove("active"));document.querySelector('.alphabet button').classList.add("active");render();search.focus()}
+function randomConcept(){
+  const c=concepts[Math.floor(Math.random()*concepts.length)];
+  document.getElementById("randomWord").innerHTML='<h3>'+c[1]+'</h3><p>'+c[3]+'</p><p class="question">'+c[5]+'</p>';
+}
+renderAlphabet();render();randomConcept();
+</script>
+</body>
+</html>
